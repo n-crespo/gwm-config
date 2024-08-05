@@ -127,6 +127,22 @@ window_rules:
       - window_process: { equals: "explorer" }
       - window_process: { equals: "sublime_text" }
 
+  - commands: ["move --workspace term"]
+    match:
+      - window_process: { equals: "alacritty" }
+
+  - commands: ["move --workspace ticktick"]
+    match:
+      - window_process: { equals: "ticktick" }
+
+  - commands: ["move --workspace mail"]
+    match:
+      - window_process: { equals: "mailspring" }
+
+  - commands: ["move --workspace spotify"]
+    match:
+      - window_process: { equals: "spotify" }
+
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
   # - name: 'resize'
