@@ -107,8 +107,25 @@ window_rules:
 
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: "PowerToys.PowerAccent" }
+
       - window_process: { equals: "Lively" }
         window_class: { regex: "HwndWrapper*" }
+
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+
+      - window_title: { equals: "Run" } # Win + R
+      - window_process: { equals: "GHelper" }
+
+  - commands: ["set-tiling"]
+    match:
+      - window_process: { equals: "sioyek" }
+
+  - commands: ["set-floating"]
+    match:
+      - window_title: { equals: "Go to" }
+      - window_process: { equals: "explorer" }
+      - window_process: { equals: "sublime_text" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
