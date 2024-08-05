@@ -1,1 +1,5 @@
 [2m2024-08-05T15:56:01.730127Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name tickticj doesn't exist.
+[2m2024-08-05T16:09:26.780802Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[1].commands: unrecognized subcommand
+ at line 112 column 15
+[2m2024-08-05T16:09:39.020391Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[1]: missing field `commands` at line 112 column 5
+[2m2024-08-05T16:09:42.095564Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[1]: missing field `commands` at line 112 column 5
