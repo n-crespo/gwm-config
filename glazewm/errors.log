@@ -4,3 +4,6 @@
 [2m2024-08-05T16:09:39.020391Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[1]: missing field `commands` at line 112 column 5
 [2m2024-08-05T16:09:42.095564Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[1]: missing field `commands` at line 112 column 5
 [2m2024-08-05T16:12:43.832956Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 122 column 7, while parsing a block mapping at line 121 column 5
+[2m2024-11-16T00:14:33.824788Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m workspaces[12].keep_alive: invalid type: string "false", expected a boolean at line 98 column 17
+[2m2024-11-16T00:14:59.687228Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m workspaces[12].keep_alive: invalid type: string "false", expected a boolean at line 98 column 17
+[2m2024-11-16T00:19:47.475579Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute 'OneDrive\\Desktop\\sBrave.lnk'.\n\nError: Program path is not valid for command 'OneDrive\\Desktop\\sBrave.lnk'."

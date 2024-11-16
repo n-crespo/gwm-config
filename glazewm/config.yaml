@@ -3,6 +3,13 @@ general:
   # another application). Here we are running a batch script to start Zebar.
   startup_commands: ["shell-exec %userprofile%/.glzr/zebar/start.bat"]
 
+  # Commands to run just before the WM is shutdown.
+  # Example: The below command kills Zebar.
+  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+
+  # Commands to run after the WM config is reloaded.
+  config_reload_commands: []
+
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
 
@@ -22,6 +29,9 @@ general:
     trigger: "monitor_focus"
 
 gaps:
+  # Whether to scale the gaps with the DPI of the monitor.
+  scale_with_dpi: true
+
   # Gap between adjacent windows.
   inner_gap: "2px"
 
@@ -38,8 +48,18 @@ window_effects:
     # Highlight the window with a colored border.
     # ** Exclusive to Windows 11 due to API limitations.
     border:
-      enabled: false
+      enabled: true
       color: "#8dbcff"
+
+    hide_title_bar:
+      enabled: false
+
+    # Change the corner style of the window's frame.
+    # ** Exclusive to Windows 11 due to API limitations.
+    corner_style:
+      enabled: true
+      # Allowed values: 'square', 'rounded', 'small_rounded'.
+      style: "small"
 
   # Visual effects to apply to non-focused windows.
   other_windows:
@@ -74,6 +94,7 @@ window_behavior:
 workspaces:
   - name: "term"
     display_name: "  "
+    keep_alive: false
 
   - name: "1"
   - name: "2"
@@ -85,18 +106,24 @@ workspaces:
   - name: "8"
   - name: "9"
 
+  - name: "messages" # for beeper + phone link
+    display_name: "󰄡 "
+
   - name: "mail"
     display_name: "󰇰 "
     keep_alive: false
 
-  - name: "ticktick"
-    display_name: "󰄴 "
+  - name: "umail" # ucla mail
+    display_name: "󰻨 "
     keep_alive: false
 
   - name: "spotify"
     display_name: "  "
     keep_alive: false
 
+  - name: "ticktick"
+    display_name: "󰄴 "
+    keep_alive: false
 window_rules:
   - commands: ["ignore"]
     match:
@@ -119,23 +146,22 @@ window_rules:
       - window_title: { equals: "Run" } # Win + R
       - window_process: { equals: "GHelper" }
 
-  - commands: ["set-tiling"]
-    match:
-      - window_process: { equals: "sioyek" }
-
   - commands: ["set-floating"]
     match:
+      # match_title: "Go to|This PC|Picture in picture|Sync to Most Recent Page Read|Bitwarden"
       - window_title: { equals: "Go to" }
       - window_process: { equals: "explorer" }
       - window_process: { equals: "sublime_text" }
-
-  # - commands: ["move --workspace term"]
-  #   match:
-  #     - window_process: { equals: "alacritty" }
+      # - window_title: {equals: ""}
+      # - window_title: {}
 
   - commands: ["move --workspace ticktick"]
     match:
       - window_process: { equals: "ticktick" }
+  #
+  # - commands: ["set-floating --centered --width=1500 --height=900"]
+  #   match:
+  #     - window_process: { regex: "alacritty" }
 
   - commands: ["move --workspace mail"]
     match:
@@ -259,8 +285,11 @@ keybindings:
   - commands: ['shell-exec alacritty -o "shell=pwsh"']
     bindings: ["alt+shift+enter"]
 
-  - commands: ["shell-exec thorium"]
+  - commands: ["shell-exec brave --profile-directory=Default"]
     bindings: ["alt+w"]
+
+  - commands: ["shell-exec OneDrive\\Desktop\\sBrave.lnk"]
+    bindings: ["alt+shift+w"]
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - commands: ["focus --next-workspace"]
@@ -270,7 +299,7 @@ keybindings:
 
   # Focus the workspace that last had focus.
   - commands: ["focus --recent-workspace"]
-    bindings: ["alt+r"]
+    bindings: ["alt+`"]
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ["focus --workspace term"]
