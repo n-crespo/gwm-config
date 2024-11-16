@@ -129,6 +129,13 @@ function App() {
           </>
         )}
 
+        {output.weather && (
+          <div className="weather">
+            {getWeatherIcon(output.weather)}
+            {Math.round(output.weather.fahrenheitTemp)}°F
+          </div>
+        )}
+
         {output.network && (
           <div className="network">
             {getNetworkIcon(output.network)}
@@ -137,12 +144,12 @@ function App() {
           </div>
         )}
 
-        {output.memory && (
-          <div className="memory">
-            <i className="nf nf-fae-chip"></i>
-            {" " + Math.round(output.memory.usage)}%
-          </div>
-        )}
+        {/* {output.memory && ( */}
+        {/*   <div className="memory"> */}
+        {/*     󰍛 */}
+        {/*     {" " + Math.round(output.memory.usage)}% */}
+        {/*   </div> */}
+        {/* )} */}
 
         {/* {output.cpu && ( */}
         {/*   <div className="cpu"> */}
@@ -158,18 +165,13 @@ function App() {
         {output.battery && (
           <div className="battery">
             {/* Show icon for whether battery is charging. */}
-            {output.battery.isCharging && ""}
+            {output.battery.isCharging && "󱐋"}
             {getBatteryIcon(output.battery)}
             {" " + Math.round(output.battery.chargePercent)}%
           </div>
         )}
 
-        {output.weather && (
-          <div className="weather">
-            {getWeatherIcon(output.weather)}
-            {Math.round(output.weather.celsiusTemp)}°C
-          </div>
-        )}
+        <div className="date">{output.date?.formatted}</div>
       </div>
     </div>
   );

@@ -54,6 +54,7 @@ body,
 .binding-mode,
 .tiling-direction,
 .network,
+.weather,
 .memory,
 .cpu,
 .battery {
@@ -115,4 +116,8 @@ body,
   font-size: 7px;
   left: -8px;
   top: 3px;
+}
+
+.date {
+  margin-left: 4px;
 }
