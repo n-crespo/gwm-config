@@ -10,6 +10,8 @@ general:
   # workspace when focusing the current workspace.
   toggle_workspace_on_refocus: true
 
+  hide_method: "hide"
+
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
     enabled: true
@@ -21,14 +23,14 @@ general:
 
 gaps:
   # Gap between adjacent windows.
-  inner_gap: "20px"
+  inner_gap: "2px"
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: "60px"
-    right: "20px"
-    bottom: "20px"
-    left: "20px"
+    top: "25px"
+    right: "2px"
+    bottom: "2px"
+    left: "2px"
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -36,13 +38,13 @@ window_effects:
     # Highlight the window with a colored border.
     # ** Exclusive to Windows 11 due to API limitations.
     border:
-      enabled: true
+      enabled: false
       color: "#8dbcff"
 
   # Visual effects to apply to non-focused windows.
   other_windows:
     border:
-      enabled: true
+      enabled: false
       color: "#a1a1a1"
 
 window_behavior:
@@ -127,9 +129,9 @@ window_rules:
       - window_process: { equals: "explorer" }
       - window_process: { equals: "sublime_text" }
 
-  - commands: ["move --workspace term"]
-    match:
-      - window_process: { equals: "alacritty" }
+  # - commands: ["move --workspace term"]
+  #   match:
+  #     - window_process: { equals: "alacritty" }
 
   - commands: ["move --workspace ticktick"]
     match:
