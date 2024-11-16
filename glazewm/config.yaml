@@ -140,26 +140,21 @@ window_rules:
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
 
-      # Ignore rules for various 3rd-party apps.
-      - window_process: { equals: "PowerToys.PowerAccent" }
-
-      - window_process: { equals: "Lively" }
-        window_class: { regex: "HwndWrapper*" }
-
-      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
-        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
-
-      - window_title: { equals: "Run" } # Win + R
+      - window_title: { regex: "Run|Focus Timer" } # Win + R
       - window_process: { equals: "GHelper" }
+
+      - window_process:
+          {
+            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|/LockApp/|Flow.Launcher",
+          }
 
   - commands: ["set-floating"]
     match:
-      # match_title: "Go to|This PC|Picture in picture|Sync to Most Recent Page Read|Bitwarden"
-      - window_title: { equals: "Go to" }
+      - window_title:
+          {
+            regex: "Go to|This PC|Picture in picture|Sync to Most Recent Page Read|Bitwarden",
+          }
       - window_process: { equals: "explorer" }
-      - window_process: { equals: "sublime_text" }
-      # - window_title: {equals: ""}
-      # - window_title: {}
 
   - commands: ["move --workspace ticktick"]
     match:

@@ -128,8 +128,10 @@ window_rules:
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: "PowerToys" }
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+
       - window_process: { equals: "PowerToys" }
         window_title: { regex: ".*? - Peek" }
+
       - window_process: { equals: "Lively" }
         window_class: { regex: "HwndWrapper" }
 
