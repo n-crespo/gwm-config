@@ -5,14 +5,14 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 i {
-  color: rgb(115 130 175 / 95%);
+  color: #384b97;
   margin-right: 0px;
 }
 
 body {
   color: rgb(255 255 255 / 100%);
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 10px;
+  font-size: 12px;
   overflow: hidden;
 }
 
@@ -32,7 +32,7 @@ body,
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 100%;
-  padding: 4px 1.5vw;
+  padding: 0px 0.5vw;
 }
 
 .left,
