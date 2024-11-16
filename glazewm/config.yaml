@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ["shell-exec %userprofile%/.glzr/zebar/start.bat"]
+  startup_commands: ["shell-exec zebar"]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
@@ -38,14 +38,14 @@ gaps:
   scale_with_dpi: true
 
   # Gap between adjacent windows.
-  inner_gap: "2px"
+  inner_gap: "1px"
 
   # Gap between windows and the screen edge.
   outer_gap:
     top: "25px"
-    right: "2px"
-    bottom: "2px"
-    left: "2px"
+    right: "1px"
+    bottom: "1px"
+    left: "1px"
 
 window_effects:
   # Visual effects to apply to the focused window.
