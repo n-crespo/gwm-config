@@ -47,43 +47,43 @@ function App() {
   // Get icon to show for how much of the battery is charged.
   function getBatteryIcon(batteryOutput) {
     if (batteryOutput.chargePercent > 90)
-      return <i className="nf nf-fa-battery_4"></i>;
+      return <i className="nf nf-md-battery"></i>;
     if (batteryOutput.chargePercent > 70)
-      return <i className="nf nf-fa-battery_3"></i>;
+      return <i className="nf nf-md-battery_70"></i>;
     if (batteryOutput.chargePercent > 40)
-      return <i className="nf nf-fa-battery_2"></i>;
+      return <i className="nf nf-md-battery_40"></i>;
     if (batteryOutput.chargePercent > 20)
-      return <i className="nf nf-fa-battery_1"></i>;
-    return <i className="nf nf-fa-battery_0"></i>;
+      return <i className="nf nf-md-battery_20"></i>;
+    return <i className="nf nf-md-battery_0"></i>;
   }
 
   // Get icon to show for current weather status.
   function getWeatherIcon(weatherOutput) {
     switch (weatherOutput.status) {
       case "clear_day":
-        return <i className="nf nf-weather-day_sunny"></i>;
+        return " ";
       case "clear_night":
-        return <i className="nf nf-weather-night_clear"></i>;
+        return " ";
       case "cloudy_day":
-        return <i className="nf nf-weather-day_cloudy"></i>;
+        return " ";
       case "cloudy_night":
-        return <i className="nf nf-weather-night_alt_cloudy"></i>;
+        return " ";
       case "light_rain_day":
-        return <i className="nf nf-weather-day_sprinkle"></i>;
+        return " ";
       case "light_rain_night":
-        return <i className="nf nf-weather-night_alt_sprinkle"></i>;
+        return " ";
       case "heavy_rain_day":
-        return <i className="nf nf-weather-day_rain"></i>;
+        return " ";
       case "heavy_rain_night":
-        return <i className="nf nf-weather-night_alt_rain"></i>;
+        return "";
       case "snow_day":
-        return <i className="nf nf-weather-day_snow"></i>;
+        return " ";
       case "snow_night":
-        return <i className="nf nf-weather-night_alt_snow"></i>;
+        return " ";
       case "thunder_day":
-        return <i className="nf nf-weather-day_lightning"></i>;
+        return " ";
       case "thunder_night":
-        return <i className="nf nf-weather-night_alt_lightning"></i>;
+        return " ";
     }
   }
 
@@ -140,7 +140,7 @@ function App() {
         {output.memory && (
           <div className="memory">
             <i className="nf nf-fae-chip"></i>
-            {Math.round(output.memory.usage)}%
+            {" " + Math.round(output.memory.usage)}%
           </div>
         )}
 
@@ -160,7 +160,7 @@ function App() {
             {/* Show icon for whether battery is charging. */}
             {output.battery.isCharging && ""}
             {getBatteryIcon(output.battery)}
-            {Math.round(output.battery.chargePercent)}%
+            {" " + Math.round(output.battery.chargePercent)}%
           </div>
         )}
 
