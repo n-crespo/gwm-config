@@ -3,7 +3,7 @@
   "htmlPath": "./with-glazewm.html",
   "zOrder": "normal",
   "shownInTaskbar": false,
-  "focused": true,
+  "focused": false,
   "resizable": false,
   "transparent": true,
   "presets": [

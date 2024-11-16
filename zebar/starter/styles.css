@@ -44,6 +44,8 @@ body,
 
 .center {
   justify-self: center;
+  font-size: 11px;
+  color: rgb(255 255 255 / 50%);
 }
 
 .right {
@@ -94,7 +96,7 @@ body,
   color: rgb(255 255 255 / 90%);
   border-radius: 2px;
   line-height: 1;
-  padding: 4px 8px;
+  padding: 2px 5px;
   border: 0;
   cursor: pointer;
 }

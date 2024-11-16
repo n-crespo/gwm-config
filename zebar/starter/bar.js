@@ -65,9 +65,9 @@ function App() {
       case "clear_night":
         return " ";
       case "cloudy_day":
-        return " ";
+        return "  ";
       case "cloudy_night":
-        return " ";
+        return " ";
       case "light_rain_day":
         return " ";
       case "light_rain_night":
@@ -109,7 +109,28 @@ function App() {
         )}
       </div>
 
-      <div className="center">{output.date?.formatted}</div>
+      <div className="center">
+        <div className="chip">
+          {/* Checking if position and startTime are both 0 */}
+          {(() => {
+            // const { media } = output;
+            const session = output.media?.session;
+
+            if (session == null) {
+              return " ";
+            } else {
+              return (
+                <>
+                  {session?.isPlaying ? "󰝚 " : "󰐊 "}
+                  {session?.title} {" - "} {session?.artist}
+                </>
+              );
+            }
+          })()}
+        </div>
+      </div>
+      {/* {output.media.session?.title} -{" "} */}
+      {/* {output.media.session?.artist} */}
 
       <div className="right">
         {output.glazewm && (
@@ -129,18 +150,19 @@ function App() {
           </>
         )}
 
-        {output.weather && (
-          <div className="weather">
-            {getWeatherIcon(output.weather)}
-            {Math.round(output.weather.fahrenheitTemp)}°F
-          </div>
-        )}
-
         {output.network && (
           <div className="network">
             {getNetworkIcon(output.network)}
             {/* this displays the network name */}
             {/* {output.network.defaultGateway?.ssid} */}
+          </div>
+        )}
+
+        {output.weather && (
+          <div className="weather">
+            {getWeatherIcon(output.weather)}
+            {"  "}
+            {Math.round(output.weather.fahrenheitTemp)}°F
           </div>
         )}
 
@@ -163,7 +185,7 @@ function App() {
         {/* )} */}
 
         {output.battery && (
-          <div className="battery">
+          <div className={`battery ${output.battery.isCharging && "charging"}`}>
             {/* Show icon for whether battery is charging. */}
             {output.battery.isCharging && "󱐋"}
             {getBatteryIcon(output.battery)}
