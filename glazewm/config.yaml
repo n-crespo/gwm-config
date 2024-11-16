@@ -154,19 +154,34 @@ window_rules:
           {
             regex: "Go to|This PC|Picture in picture|Sync to Most Recent Page Read|Bitwarden",
           }
-      - window_process: { equals: "explorer" }
+      - window_class:
+          {
+            regex: "ApplicationFrameWindow|HwndWrapper*|open|#32770|SunAwtDialog",
+          }
+      # - window_process:
+      #     {
+      #       regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|WindowsTerminal|pwsh|OpenConsole|Taskmgr|Beeper",
+      #     }
 
-  - commands: ["move --workspace ticktick"]
-    match:
-      - window_process: { equals: "ticktick" }
-  #
-  # - commands: ["set-floating --centered --width=1500 --height=900"]
+  # - commands: ["move --workspace ticktick"]
   #   match:
-  #     - window_process: { regex: "alacritty" }
+  #     - match_title: { regex: "TickTick - Today - TickTick|TickTick" }
+  #       window_process: { equals: "brave" }
 
-  - commands: ["move --workspace mail"]
+  - commands: ["set-tiling"]
     match:
-      - window_process: { equals: "mailspring" }
+      - window_process: { regex: "alacritty" }
+
+  # - commands: ["move --workspace mail"]
+  #   match:
+  #     - match_title:
+  #         { regex: "Gmail - Inbox - nicolasecrespo@gmail.com - Gmail" }
+  #       window_process: { equals: "brave" }
+  #
+  # - commands: ["move --workspace umail"]
+  #   match:
+  #     - match_title: "Gmail - Inbox - ncrespo@g.ucla.edu - Gmail"
+  #       window_process: { equals: "thorium" }
 
   - commands: ["move --workspace spotify"]
     match:
@@ -289,8 +304,8 @@ keybindings:
   - commands: ["shell-exec brave"]
     bindings: ["alt+w"]
 
-  - commands: ["shell-exec brave --profile-directory=Default"]
-    bindings: ["alt+shift+w"]
+  # - commands: ["shell-exec brave"]
+  #   bindings: ["alt+shift+w"]
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - commands: ["focus --next-workspace"]
@@ -327,8 +342,12 @@ keybindings:
     bindings: ["alt+e"]
   - commands: ["focus --workspace spotify"]
     bindings: ["alt+s"]
-  - commands: ["focus --workspace mail"]
+  - commands: ["focus --workspace messages"]
     bindings: ["alt+m"]
+  - commands: ["focus --workspace mail"]
+    bindings: ["alt+,"]
+  - commands: ["focus --workspace umail"]
+    bindings: ["alt+."]
 
   # Move the focused window's parent workspace to a monitor in a given
   # direction.

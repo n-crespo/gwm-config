@@ -7,3 +7,11 @@
 [2m2024-11-16T00:14:33.824788Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m workspaces[12].keep_alive: invalid type: string "false", expected a boolean at line 98 column 17
 [2m2024-11-16T00:14:59.687228Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m workspaces[12].keep_alive: invalid type: string "false", expected a boolean at line 98 column 17
 [2m2024-11-16T00:19:47.475579Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute 'OneDrive\\Desktop\\sBrave.lnk'.\n\nError: Program path is not valid for command 'OneDrive\\Desktop\\sBrave.lnk'."
+[2m2024-11-16T05:20:32.600079Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4]: missing field `commands` at line 186 column 5
+[2m2024-11-16T05:20:37.615710Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4]: missing field `commands` at line 186 column 5
+[2m2024-11-16T05:20:57.549452Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4].match[0]: data did not match any variant of untagged enum MatchType at line 188 column 9
+[2m2024-11-16T05:21:03.485206Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4].match[0]: data did not match any variant of untagged enum MatchType at line 188 column 9
+[2m2024-11-16T05:21:12.631278Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4]: missing field `commands` at line 186 column 5
+[2m2024-11-16T05:21:21.103049Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4].commands: invalid type: string "move to workspace umail", expected a sequence at line 186 column 15
+[2m2024-11-16T05:21:33.391207Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4].commands: unexpected argument found
+ at line 186 column 15
