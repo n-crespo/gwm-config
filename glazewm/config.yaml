@@ -294,7 +294,7 @@ keybindings:
   - commands: ["shell-exec alacritty"]
     bindings: ["alt+enter"]
 
-  - commands: ['shell-exec alacritty -o "shell=pwsh"']
+  - commands: ['shell-exec alacritty -o "shell=\"pwsh\""']
     bindings: ["alt+shift+enter"]
 
   - commands: ["shell-exec brave"]

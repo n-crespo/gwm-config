@@ -1,11 +1,11 @@
 /**
- * Import the Nerdfonts icon font.
+  * Import the Nerdfonts icon font.
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 i {
-  color: #384b97;
+  color: rgb(255 255 255 / 100%);
   margin-right: 0px;
 }
 
@@ -57,7 +57,7 @@ body,
 .memory,
 .cpu,
 .battery {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .workspaces {
