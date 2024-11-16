@@ -2,17 +2,17 @@
  * Import the Nerdfonts icon font.
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
-@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 i {
   color: rgb(115 130 175 / 95%);
-  margin-right: 7px;
+  margin-right: 0px;
 }
 
 body {
-  color: rgb(255 255 255 / 90%);
-  font-family: ui-monospace, monospace;
-  font-size: 12px;
+  color: rgb(255 255 255 / 100%);
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10px;
   overflow: hidden;
 }
 

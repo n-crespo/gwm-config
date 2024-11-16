@@ -8,7 +8,7 @@ general:
   shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
 
   # Commands to run after the WM config is reloaded.
-  config_reload_commands: []
+  config_reload_commands: ["shell-exec zebar"]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -94,7 +94,7 @@ window_behavior:
       maximized: false
 
       # Whether to show fullscreen windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
 workspaces:
   - name: "term"
