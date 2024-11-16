@@ -22,7 +22,7 @@ general:
   # visible in the taskbar.
   # - 'hide': Legacy method (v3.5 and earlier) that has a brief animation,
   # but has stability issues with some apps.
-  hide_method: "cloak"
+  hide_method: "hide"
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
@@ -83,7 +83,7 @@ window_behavior:
   state_defaults:
     floating:
       # Whether to center floating windows by default.
-      centered: true
+      centered: false
 
       # Whether to show floating windows as always on top.
       shown_on_top: false
@@ -129,6 +129,7 @@ workspaces:
   - name: "ticktick"
     display_name: "󰄴 "
     keep_alive: false
+
 window_rules:
   - commands: ["ignore"]
     match:
@@ -290,7 +291,7 @@ keybindings:
   - commands: ['shell-exec alacritty -o "shell=pwsh"']
     bindings: ["alt+shift+enter"]
 
-  - commands: ['shell-exec brave --profile-directory="Default"']
+  - commands: ["shell-exec brave"]
     bindings: ["alt+w"]
 
   - commands: ["shell-exec brave --profile-directory=Default"]
