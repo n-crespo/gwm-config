@@ -24,7 +24,7 @@ body,
 
 #root {
   border-bottom: 1px solid rgb(255 255 255 / 5%);
-  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+  background: black;
 }
 
 .app {
@@ -78,7 +78,9 @@ body,
     background: rgb(255 255 255 / 15%);
   }
 
-  &.focused,
+  &.focused {
+    background: #4b73ffbf;
+  }
   &:hover {
     background: rgb(75 115 255 / 50%);
   }

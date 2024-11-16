@@ -6,10 +6,11 @@ const providers = zebar.createProviderGroup({
   network: { type: "network" },
   glazewm: { type: "glazewm" },
   cpu: { type: "cpu" },
-  date: { type: "date", formatting: "EEE d MMM t" },
+  date: { type: "date", formatting: "EEE MMM d, t" },
   battery: { type: "battery" },
   memory: { type: "memory" },
   weather: { type: "weather" },
+  media: { type: "media" },
 });
 
 createRoot(document.getElementById("root")).render(<App />);
@@ -131,7 +132,8 @@ function App() {
         {output.network && (
           <div className="network">
             {getNetworkIcon(output.network)}
-            {output.network.defaultGateway?.ssid}
+            {/* this displays the network name */}
+            {/* {output.network.defaultGateway?.ssid} */}
           </div>
         )}
 
@@ -142,16 +144,16 @@ function App() {
           </div>
         )}
 
-        {output.cpu && (
-          <div className="cpu">
-            <i className="nf nf-oct-cpu"></i>
-
-            {/* Change the text color if the CPU usage is high. */}
-            <span className={output.cpu.usage > 85 ? "high-usage" : ""}>
-              {Math.round(output.cpu.usage)}%
-            </span>
-          </div>
-        )}
+        {/* {output.cpu && ( */}
+        {/*   <div className="cpu"> */}
+        {/*     <i className="nf nf-oct-cpu"></i> */}
+        {/**/}
+        {/* Change the text color if the CPU usage is high. */}
+        {/*     <span className={output.cpu.usage > 85 ? "high-usage" : ""}> */}
+        {/*       {Math.round(output.cpu.usage)}% */}
+        {/*     </span> */}
+        {/*   </div> */}
+        {/* )} */}
 
         {output.battery && (
           <div className="battery">
