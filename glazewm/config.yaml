@@ -158,19 +158,15 @@ window_rules:
           {
             regex: "ApplicationFrameWindow|HwndWrapper*|open|#32770|SunAwtDialog",
           }
-      # - window_process:
-      #     {
-      #       regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|WindowsTerminal|pwsh|OpenConsole|Taskmgr|Beeper",
-      #     }
+      - window_process:
+          {
+            regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|WindowsTerminal|pwsh|OpenConsole|Taskmgr|Beeper",
+          }
 
   # - commands: ["move --workspace ticktick"]
   #   match:
   #     - match_title: { regex: "TickTick - Today - TickTick|TickTick" }
   #       window_process: { equals: "brave" }
-
-  - commands: ["set-tiling"]
-    match:
-      - window_process: { regex: "alacritty" }
 
   # - commands: ["move --workspace mail"]
   #   match:
