@@ -92,13 +92,14 @@ body,
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(255 255 255 / 15%);
+  background: transparent;
   color: rgb(255 255 255 / 90%);
   border-radius: 2px;
   line-height: 1;
-  padding: 2px 5px;
+  padding: 2px 2px;
   border: 0;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .binding-mode {

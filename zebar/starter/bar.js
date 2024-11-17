@@ -22,6 +22,14 @@ function App() {
     providers.onOutput(() => setOutput(providers.outputMap));
   }, []);
 
+  function stripMedia(mediaOutput) {
+    if (mediaOutput.status === "playing") {
+      return <i className="nf nf-md-play"></i>;
+    } else {
+      return <i className="nf nf-md-pause"></i>;
+    }
+  }
+
   // Get icon to show for current network status.
   function getNetworkIcon(networkOutput) {
     switch (networkOutput.defaultInterface?.type) {
@@ -142,7 +150,7 @@ function App() {
             ))}
 
             <button
-              className={`tiling-direction nf ${output.glazewm.tilingDirection === "horizontal" ? "nf-md-swap_horizontal" : "nf-md-swap_vertical"}`}
+              className={`tiling-direction nf ${output.glazewm.tilingDirection === "horizontal" ? "nf-cod-split_horizontal" : "nf-cod-split_vertical"}`}
               onClick={() =>
                 output.glazewm.runCommand("toggle-tiling-direction")
               }
