@@ -129,52 +129,75 @@ function App() {
 
   // Get icon to show for current weather status.
   function getWeatherIcon(weatherOutput) {
-    var Icon = "";
-    var IconColor = "white";
+    var Icon = "test";
+    var IconColor = "purple";
     switch (weatherOutput.status) {
       case "clear_day": {
         Icon = " ";
         IconColor = "#fad12f";
+        break;
       }
       case "clear_night": {
         Icon = " ";
         IconColor = "#f9f9f9";
+        break;
       }
-      case "cloudy_day":
-        (Icon = "  "), (IconColor = "#9c9c9c");
-      case "cloudy_night":
-        Icon = " ";
+      case "cloudy_day": {
+        Icon = "  ";
         IconColor = "#9c9c9c";
-      case "light_rain_day":
-        Icon = " ";
-        IconColor = "#5c69ff";
-      case "light_rain_night":
-        Icon = " ";
-        IconColor = "#212cb5";
-      case "heavy_rain_day":
+        break;
+      }
+      case "cloudy_night": {
+        Icon = " ";
+        IconColor = "#9c9c9c";
+        break;
+      }
+      case "light_rain_day": {
+        Icon = " ";
+        IconColor = "#a8acdd";
+        break;
+      }
+      case "light_rain_night": {
+        Icon = " ";
+        IconColor = "#a8acdd";
+        break;
+      }
+      case "heavy_rain_day": {
         Icon = " ";
-        IconColor = "#333982";
-      case "heavy_rain_night":
-        Icon = "";
-        IconColor = "#1f2782";
-      case "snow_day":
+        IconColor = "#a8acdd";
+        break;
+      }
+      case "heavy_rain_night": {
+        Icon = " ";
+        IconColor = "#7d85e0";
+        break;
+      }
+      case "snow_day": {
         Icon = " ";
         IconColor = "#f9f9f9";
-      case "snow_night":
+        break;
+      }
+      case "snow_night": {
         Icon = " ";
         IconColor = "#f9f9f9";
-      case "thunder_day":
-        Icon = " ";
-        IconColor = "#333982";
-      case "thunder_night":
+        break;
+      }
+      case "thunder_day": {
+        Icon = " ";
+        IconColor = "#a8acdd";
+        break;
+      }
+      case "thunder_night": {
         Icon = " ";
-        IconColor = "#1f2782";
-      default:
-        Icon = " ";
+        IconColor = "#7d85e0";
+        break;
+      }
+      default: {
+        Icon = weatherOutput.status;
         IconColor = "#f9f9f9";
+      }
     }
-    // return IconClass, IconColor;
-    return <i style={{ color: IconColor }}>{Icon}</i>;
+    return <i style={{ color: IconColor, fontSize: "12px" }}>{Icon}</i>;
   }
 
   return (
