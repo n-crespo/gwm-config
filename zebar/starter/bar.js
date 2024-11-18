@@ -3,7 +3,7 @@ import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
 import * as zebar from "https://esm.sh/zebar@2";
 
 const providers = zebar.createProviderGroup({
-  network: { type: "network" },
+  network: { type: "network", refreshInterval: 3000 },
   glazewm: { type: "glazewm" },
   cpu: { type: "cpu" },
   date: { type: "date", formatting: "EEE MMM d, t" },
@@ -68,6 +68,7 @@ function App() {
           iconClass = "nf nf-md-wifi_strength_outline";
           iconColor = "red";
         }
+        break;
       default:
         iconClass = "nf nf-md-wifi_strength_off_outline";
         iconColor = "red";
