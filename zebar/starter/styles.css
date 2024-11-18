@@ -99,7 +99,7 @@ body,
   padding: 2px 2px;
   border: 0;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 11px;
 }
 
 .binding-mode {
@@ -112,6 +112,10 @@ body,
 
 .battery {
   position: relative;
+
+  &.charging {
+    color: green;
+  }
 }
 
 .battery .charging-icon {

@@ -49,67 +49,132 @@ function App() {
 
   // Get icon to show for current network status.
   function getNetworkIcon(networkOutput) {
+    let iconClass = "";
+    let iconColor = "white";
     switch (networkOutput.defaultInterface?.type) {
       case "ethernet":
-        return <i className="nf nf-md-ethernet_cable"></i>;
+        iconClass = "nf nf-md-ethernet_cable";
+        iconColor = "red";
       case "wifi":
         if (networkOutput.defaultGateway?.signalStrength >= 80) {
-          return <i className="nf nf-md-wifi_strength_4"></i>;
+          iconClass = "nf nf-md-wifi_strength_4";
         } else if (networkOutput.defaultGateway?.signalStrength >= 65) {
-          return <i className="nf nf-md-wifi_strength_3"></i>;
+          iconClass = "nf nf-md-wifi_strength_3";
         } else if (networkOutput.defaultGateway?.signalStrength >= 40) {
-          return <i className="nf nf-md-wifi_strength_2"></i>;
+          iconClass = "nf nf-md-wifi_strength_2";
         } else if (networkOutput.defaultGateway?.signalStrength >= 25) {
-          return <i className="nf nf-md-wifi_strength_1"></i>;
+          iconClass = "nf nf-md-wifi_strength_1";
         } else {
-          return <i className="nf nf-md-wifi_strength_outline"></i>;
+          iconClass = "nf nf-md-wifi_strength_outline";
+          iconColor = "red";
         }
       default:
-        return <i className="nf nf-md-wifi_strength_off_outline"></i>;
+        iconClass = "nf nf-md-wifi_strength_off_outline";
+        iconColor = "red";
     }
+    return (
+      <i
+        className={iconClass}
+        style={{ color: iconColor, fontSize: "13px" }}
+      ></i>
+    );
   }
 
   // Get icon to show for how much of the battery is charged.
+  // Get icon to show for how much of the battery is charged.
   function getBatteryIcon(batteryOutput) {
-    if (batteryOutput.chargePercent > 90)
-      return <i className="nf nf-md-battery"></i>;
-    if (batteryOutput.chargePercent > 70)
-      return <i className="nf nf-md-battery_70"></i>;
-    if (batteryOutput.chargePercent > 40)
-      return <i className="nf nf-md-battery_40"></i>;
-    if (batteryOutput.chargePercent > 20)
-      return <i className="nf nf-md-battery_20"></i>;
-    return <i className="nf nf-md-battery_0"></i>;
+    let iconClass = "nf nf-md-battery_0";
+    let iconColor = "red"; // Default color (red for low battery)
+
+    if (batteryOutput.chargePercent == 100) {
+      iconClass = "nf nf-md-battery";
+      iconColor = "green";
+    } else if (batteryOutput.chargePercent > 90) {
+      iconClass = "nf nf-md-battery_90";
+      iconColor = "green"; // Full battery - green
+    } else if (batteryOutput.chargePercent > 80) {
+      iconClass = "nf nf-md-battery_80";
+      iconColor = "green"; // High battery - light green
+    } else if (batteryOutput.chargePercent > 70) {
+      iconClass = "nf nf-md-battery_70";
+      iconColor = "lightgreen"; // High battery - light green
+    } else if (batteryOutput.chargePercent > 60) {
+      iconClass = "nf nf-md-battery_60";
+      iconColor = "lightgreen"; // High battery - light green
+    } else if (batteryOutput.chargePercent > 40) {
+      iconClass = "nf nf-md-battery_40";
+      iconColor = "lightgreen"; // Medium battery - yellow
+    } else if (batteryOutput.chargePercent > 30) {
+      iconClass = "nf nf-md-battery_30";
+      iconColor = "orange"; // Low battery - orange
+    } else if (batteryOutput.chargePercent > 20) {
+      iconClass = "nf nf-md-battery_20";
+      iconColor = "orange"; // Low battery - orange
+    } else if (batteryOutput.chargePercent > 10) {
+      iconClass = "nf nf-md-battery_10";
+      iconColor = "orange"; // Low battery - orange
+    }
+
+    return (
+      <i
+        className={iconClass}
+        style={{
+          color: iconColor,
+          fontSize: "12px",
+          verticalAlign: "+1px",
+        }}
+      ></i>
+    );
   }
 
   // Get icon to show for current weather status.
   function getWeatherIcon(weatherOutput) {
+    var Icon = "";
+    var IconColor = "white";
     switch (weatherOutput.status) {
-      case "clear_day":
-        return " ";
-      case "clear_night":
-        return " ";
+      case "clear_day": {
+        Icon = " ";
+        IconColor = "#fad12f";
+      }
+      case "clear_night": {
+        Icon = " ";
+        IconColor = "#f9f9f9";
+      }
       case "cloudy_day":
-        return "  ";
+        (Icon = "  "), (IconColor = "#9c9c9c");
       case "cloudy_night":
-        return " ";
+        Icon = " ";
+        IconColor = "#9c9c9c";
       case "light_rain_day":
-        return " ";
+        Icon = " ";
+        IconColor = "#5c69ff";
       case "light_rain_night":
-        return " ";
+        Icon = " ";
+        IconColor = "#212cb5";
       case "heavy_rain_day":
-        return " ";
+        Icon = " ";
+        IconColor = "#333982";
       case "heavy_rain_night":
-        return "";
+        Icon = "";
+        IconColor = "#1f2782";
       case "snow_day":
-        return " ";
+        Icon = " ";
+        IconColor = "#f9f9f9";
       case "snow_night":
-        return " ";
+        Icon = " ";
+        IconColor = "#f9f9f9";
       case "thunder_day":
-        return " ";
+        Icon = " ";
+        IconColor = "#333982";
       case "thunder_night":
-        return " ";
+        Icon = " ";
+        IconColor = "#1f2782";
+      default:
+        Icon = " ";
+        IconColor = "#f9f9f9";
     }
+    // return IconClass, IconColor;
+    return <i style={{ color: IconColor }}>{Icon}</i>;
   }
 
   return (
@@ -186,6 +251,8 @@ function App() {
 
         {output.weather && (
           <div className="weather">
+            {/* let IconClass, IconColor = getWeatherIcon(output.weather); */}
+            {/* <i className={IconClass} style={{ color: IconColor }}></i> */}
             {getWeatherIcon(output.weather)}
             {"  "}
             {Math.round(output.weather.fahrenheitTemp)}°F
