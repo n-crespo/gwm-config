@@ -28,13 +28,16 @@ function App() {
 
   // ensures title + artist doesnt exceed 69 chars
   function stripMedia(title, artist) {
-    const maxLength = 69,
-      ellipsis = "…",
-      separator = " - ";
-    const [titleMax, artistMax] = [
-      Math.floor((maxLength - separator.length) * 0.75),
-      Math.ceil((maxLength - separator.length) * 0.25),
-    ];
+    const ellipsis = "…";
+    const separator = " - ";
+
+    const titleMax = Math.floor(50 - separator.length - 1);
+    var artistMax = Math.ceil(19 - separator.length - 1);
+
+    if (title.length < titleMax) {
+      artistMax += titleMax - title.length;
+    }
+
     // truncate, remove ending whitespace and add ellipsis if needed
     const truncate = (str, len) =>
       str.length > len

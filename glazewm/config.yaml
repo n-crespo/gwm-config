@@ -145,7 +145,7 @@ window_rules:
 
       - window_process:
           {
-            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|/LockApp/|Flow.Launcher",
+            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
           }
 
   - commands: ["set-floating"]
@@ -165,31 +165,26 @@ window_rules:
 
   - commands: ["move --workspace ticktick"]
     match:
-      - window_title:
-          {
-            regex: "'TickTick - Today - TickTick'|'TickTick'|'Ticktick - Inbox - TickTick'",
-          }
+      - window_title: { regex: "TickTick" }
         # window_process: { regex: "brave" }
 
   - commands: ["move --workspace mail"]
     match:
       - window_title:
-          {
-            equals: "'Gmail - Inbox - nicolasecrespo@gmail.com - Gmail'|'Gmail'",
-          }
+          { regex: "(Gmail - Inbox - nicolasecrespo@gmail.com - Gmail)" }
         # window_process: { equals: "brave" }
 
   - commands: ["move --workspace umail"]
     match:
       - window_title:
           {
-            equals: "'Gmail - Inbox - ncrespo@g.ucla.edu - Google Apps for UCLA Mail'",
+            regex: "(Gmail - Inbox - ncrespo@g.ucla.edu - Google Apps for UCLA Mail)",
           }
         # window_process: { equals: "thorium" }
 
   - commands: ["move --workspace spotify"]
     match:
-      - window_process: { regex: "Spotify" }
+      - window_process: { equals: "Spotify" }
 
   - commands: ["move --workspace messages"]
     match:
