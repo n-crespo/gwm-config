@@ -9,7 +9,11 @@ const providers = zebar.createProviderGroup({
   date: { type: "date", formatting: "EEE MMM d, t" },
   battery: { type: "battery" },
   memory: { type: "memory" },
-  weather: { type: "weather" },
+  weather: {
+    type: "weather",
+    latitude: 34.07005584776311,
+    longitude: -118.45003755474067,
+  },
   media: { type: "media" },
 });
 
@@ -22,12 +26,22 @@ function App() {
     providers.onOutput(() => setOutput(providers.outputMap));
   }, []);
 
-  function stripMedia(mediaOutput) {
-    if (mediaOutput.status === "playing") {
-      return <i className="nf nf-md-play"></i>;
-    } else {
-      return <i className="nf nf-md-pause"></i>;
-    }
+  // ensures title + artist doesnt exceed 69 chars
+  function stripMedia(title, artist) {
+    const maxLength = 69,
+      ellipsis = "…",
+      separator = " - ";
+    const [titleMax, artistMax] = [
+      Math.floor((maxLength - separator.length) * 0.75),
+      Math.ceil((maxLength - separator.length) * 0.25),
+    ];
+    // truncate, remove ending whitespace and add ellipsis if needed
+    const truncate = (str, len) =>
+      str.length > len
+        ? str.slice(0, len - ellipsis.length).trim() + ellipsis
+        : str;
+
+    return `${truncate(title, titleMax)}${separator}${truncate(artist, artistMax)}`;
   }
 
   // Get icon to show for current network status.
@@ -130,7 +144,8 @@ function App() {
               return (
                 <>
                   {session?.isPlaying ? "󰝚 " : "󰐊 "}
-                  {session?.title} {" - "} {session?.artist}
+                  {stripMedia(session?.title, session?.artist)}
+                  {/* {session?.title} {" - "} {session?.artist} */}
                 </>
               );
             }

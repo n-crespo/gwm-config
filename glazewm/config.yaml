@@ -140,7 +140,7 @@ window_rules:
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
 
-      - window_title: { regex: "Run|Focus Timer" } # Win + R
+      - window_title: { regex: "Focus Timer" } # Win + R
       - window_process: { equals: "GHelper" }
 
       - window_process:
@@ -163,25 +163,37 @@ window_rules:
             regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|WindowsTerminal|pwsh|OpenConsole|Taskmgr|Beeper",
           }
 
-  # - commands: ["move --workspace ticktick"]
-  #   match:
-  #     - match_title: { regex: "TickTick - Today - TickTick|TickTick" }
-  #       window_process: { equals: "brave" }
+  - commands: ["move --workspace ticktick"]
+    match:
+      - window_title:
+          {
+            regex: "'TickTick - Today - TickTick'|'TickTick'|'Ticktick - Inbox - TickTick'",
+          }
+        # window_process: { regex: "brave" }
 
-  # - commands: ["move --workspace mail"]
-  #   match:
-  #     - match_title:
-  #         { regex: "Gmail - Inbox - nicolasecrespo@gmail.com - Gmail" }
-  #       window_process: { equals: "brave" }
-  #
-  # - commands: ["move --workspace umail"]
-  #   match:
-  #     - match_title: "Gmail - Inbox - ncrespo@g.ucla.edu - Gmail"
-  #       window_process: { equals: "thorium" }
+  - commands: ["move --workspace mail"]
+    match:
+      - window_title:
+          {
+            equals: "'Gmail - Inbox - nicolasecrespo@gmail.com - Gmail'|'Gmail'",
+          }
+        # window_process: { equals: "brave" }
+
+  - commands: ["move --workspace umail"]
+    match:
+      - window_title:
+          {
+            equals: "'Gmail - Inbox - ncrespo@g.ucla.edu - Google Apps for UCLA Mail'",
+          }
+        # window_process: { equals: "thorium" }
 
   - commands: ["move --workspace spotify"]
     match:
-      - window_process: { equals: "Spotify" }
+      - window_process: { regex: "Spotify" }
+
+  - commands: ["move --workspace messages"]
+    match:
+      - window_process: { equals: "Beeper" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -381,5 +393,9 @@ keybindings:
     bindings: ["alt+shift+e"]
   - commands: ["move --workspace spotify"]
     bindings: ["alt+shift+s"]
-  - commands: ["move --workspace mail"]
+  - commands: ["move --workspace messages"]
     bindings: ["alt+shift+m"]
+  - commands: ["move --workspace mail"]
+    bindings: ["alt+shift+,"]
+  - commands: ["move --workspace umail"]
+    bindings: ["alt+shift+."]
