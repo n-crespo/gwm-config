@@ -138,7 +138,7 @@ function App() {
         break;
       }
       case "clear_night": {
-        Icon = " ";
+        Icon = "";
         IconColor = "#f9f9f9";
         break;
       }
@@ -303,8 +303,10 @@ function App() {
         {output.battery && (
           <div className={`battery ${output.battery.isCharging && "charging"}`}>
             {/* Show icon for whether battery is charging. */}
-            {output.battery.isCharging && "󱐋"}
-            {getBatteryIcon(output.battery)}
+            <div className="charging-icon">
+              {output.battery.isCharging && "󱐋"}
+            </div>
+            {!output.battery.isCharging && getBatteryIcon(output.battery)}
             {" " + Math.round(output.battery.chargePercent)}%
           </div>
         )}

@@ -60,7 +60,11 @@ body,
 .memory,
 .cpu,
 .battery {
-  margin-right: 10px;
+  margin-right: 12px;
+}
+
+.weather {
+  margin-right: 18px;
 }
 
 .workspaces {
@@ -113,16 +117,18 @@ body,
 .battery {
   position: relative;
 
-  &.charging {
-    color: green;
-  }
+  /* &.charging { */
+  /*   color: green; */
+  /* } */
 }
 
-.battery .charging-icon {
+.charging-icon {
   position: absolute;
-  font-size: 7px;
+  font-size: 15px;
   left: -8px;
-  top: 3px;
+  top: -2px;
+  color: yellow;
+  /* margin-left: 10px; */
 }
 
 .date {
