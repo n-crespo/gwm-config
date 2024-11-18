@@ -304,7 +304,7 @@ keybindings:
   - commands: ['shell-exec alacritty -o "shell=\"pwsh\""']
     bindings: ["alt+shift+enter"]
 
-  - commands: ["shell-exec brave"]
+  - commands: ["shell-exec brave --profile-directory=default"]
     bindings: ["alt+w"]
 
   # - commands: ["shell-exec brave"]
