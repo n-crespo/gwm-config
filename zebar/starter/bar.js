@@ -92,28 +92,31 @@ function App() {
       iconColor = "green";
     } else if (batteryOutput.chargePercent > 90) {
       iconClass = "nf nf-md-battery_90";
-      iconColor = "green"; // Full battery - green
+      iconColor = "green";
     } else if (batteryOutput.chargePercent > 80) {
       iconClass = "nf nf-md-battery_80";
-      iconColor = "green"; // High battery - light green
+      iconColor = "green";
     } else if (batteryOutput.chargePercent > 70) {
       iconClass = "nf nf-md-battery_70";
-      iconColor = "lightgreen"; // High battery - light green
+      iconColor = "lightgreen";
     } else if (batteryOutput.chargePercent > 60) {
       iconClass = "nf nf-md-battery_60";
-      iconColor = "lightgreen"; // High battery - light green
+      iconColor = "lightgreen";
+    } else if (batteryOutput.chargePercent > 50) {
+      iconClass = "nf nf-md-battery_50";
+      iconColor = "lightgreen";
     } else if (batteryOutput.chargePercent > 40) {
       iconClass = "nf nf-md-battery_40";
-      iconColor = "lightgreen"; // Medium battery - yellow
+      iconColor = "yellow";
     } else if (batteryOutput.chargePercent > 30) {
       iconClass = "nf nf-md-battery_30";
-      iconColor = "orange"; // Low battery - orange
+      iconColor = "yellow";
     } else if (batteryOutput.chargePercent > 20) {
       iconClass = "nf nf-md-battery_20";
-      iconColor = "orange"; // Low battery - orange
+      iconColor = "orange";
     } else if (batteryOutput.chargePercent > 10) {
       iconClass = "nf nf-md-battery_10";
-      iconColor = "orange"; // Low battery - orange
+      iconColor = "red";
     }
 
     return (
