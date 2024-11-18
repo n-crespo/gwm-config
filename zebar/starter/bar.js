@@ -7,7 +7,7 @@ const providers = zebar.createProviderGroup({
   glazewm: { type: "glazewm" },
   cpu: { type: "cpu" },
   date: { type: "date", formatting: "EEE MMM d, t" },
-  battery: { type: "battery" },
+  battery: { type: "battery", refreshInterval: 1000 },
   memory: { type: "memory" },
   weather: {
     type: "weather",
@@ -302,10 +302,18 @@ function App() {
 
         {output.battery && (
           <div className={`battery ${output.battery.isCharging && "charging"}`}>
-            {/* Show icon for whether battery is charging. */}
-            <div className="charging-icon">
-              {output.battery.isCharging && "󱐋"}
-            </div>
+            {/* Show icon for whether battery is charging. */}{" "}
+            {output.battery.isCharging && (
+              <i
+                style={{
+                  color: "#fad12f",
+                  fontSize: "16px",
+                  verticalAlign: "-1px",
+                }}
+              >
+                󱐋
+              </i>
+            )}
             {!output.battery.isCharging && getBatteryIcon(output.battery)}
             {" " + Math.round(output.battery.chargePercent)}%
           </div>

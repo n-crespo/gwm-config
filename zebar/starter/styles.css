@@ -63,9 +63,9 @@ body,
   margin-right: 12px;
 }
 
-.weather {
-  margin-right: 18px;
-}
+/* .weather { */
+/*   margin-right: 18px; */
+/* } */
 
 .workspaces {
   display: flex;
@@ -116,19 +116,6 @@ body,
 
 .battery {
   position: relative;
-
-  /* &.charging { */
-  /*   color: green; */
-  /* } */
-}
-
-.charging-icon {
-  position: absolute;
-  font-size: 15px;
-  left: -8px;
-  top: -2px;
-  color: yellow;
-  /* margin-left: 10px; */
 }
 
 .date {
