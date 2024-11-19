@@ -30,27 +30,30 @@ function App() {
   function stripMedia(title, artist) {
     const ellipsis = "…";
     const separator = " - ";
+    const maxLength = 80;
 
-    const titleMax = Math.floor(50 - separator.length - 1);
-    var artistMax = Math.ceil(19 - separator.length - 1);
+    // Calculate the space available for title and artist
+    const separatorLength = separator.length;
+    const availableLength = maxLength - separatorLength;
 
-    if (title.length < titleMax) {
-      artistMax += titleMax - title.length;
-    }
+    // Determine truncation limits
+    let titleMax = availableLength - artist.length;
+    let artistMax = availableLength - title.length;
 
-    // truncate, remove ending whitespace and add ellipsis if needed
-    const truncate = (str, len) => {
-      if (str) {
-        str.length > len
-          ? str.slice(0, len - ellipsis.length).trim() + ellipsis
-          : str;
-        return str;
-      } else {
-        return "";
-      }
-    };
+    // Ensure minimum truncation limits
+    titleMax = Math.max(0, titleMax);
+    artistMax = Math.max(0, artistMax);
 
-    return `${truncate(title, titleMax)}${separator}${truncate(artist, artistMax)}`;
+    // Truncate function
+    const truncate = (str, len) =>
+      str.length > len
+        ? str.slice(0, len - ellipsis.length).trim() + ellipsis
+        : str;
+
+    const truncatedTitle = truncate(title, Math.min(titleMax, 50));
+    const truncatedArtist = truncate(artist, Math.min(artistMax, 19));
+
+    return `${truncatedTitle}${separator}${truncatedArtist}`;
   }
 
   // Get icon to show for current network status.
