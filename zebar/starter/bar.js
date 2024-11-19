@@ -145,73 +145,64 @@ function App() {
 
   // Get icon to show for current weather status.
   function getWeatherIcon(weatherOutput) {
-    var Icon = "test";
-    var IconColor = "purple";
+    let Icon = "test";
+    let IconColor = "purple";
+    if (!weatherOutput || !weatherOutput.status) {
+      return <i style={{ color: "#f9f9f9", fontSize: "12px" }}></i>;
+    }
     switch (weatherOutput.status) {
-      case "clear_day": {
+      case "clear_day":
         Icon = " ";
         IconColor = "#fad12f";
         break;
-      }
-      case "clear_night": {
+      case "clear_night":
         Icon = "";
         IconColor = "#f9f9f9";
         break;
-      }
-      case "cloudy_day": {
+      case "cloudy_day":
         Icon = "  ";
         IconColor = "#9c9c9c";
         break;
-      }
-      case "cloudy_night": {
+      case "cloudy_night":
         Icon = " ";
         IconColor = "#9c9c9c";
         break;
-      }
-      case "light_rain_day": {
+      case "light_rain_day":
         Icon = " ";
         IconColor = "#a8acdd";
         break;
-      }
-      case "light_rain_night": {
+      case "light_rain_night":
         Icon = " ";
         IconColor = "#a8acdd";
         break;
-      }
-      case "heavy_rain_day": {
+      case "heavy_rain_day":
         Icon = " ";
         IconColor = "#a8acdd";
         break;
-      }
-      case "heavy_rain_night": {
+      case "heavy_rain_night":
         Icon = " ";
         IconColor = "#7d85e0";
         break;
-      }
-      case "snow_day": {
+      case "snow_day":
         Icon = " ";
         IconColor = "#f9f9f9";
         break;
-      }
-      case "snow_night": {
+      case "snow_night":
         Icon = " ";
         IconColor = "#f9f9f9";
         break;
-      }
-      case "thunder_day": {
+      case "thunder_day":
         Icon = " ";
         IconColor = "#a8acdd";
         break;
-      }
-      case "thunder_night": {
+      case "thunder_night":
         Icon = " ";
         IconColor = "#7d85e0";
         break;
-      }
-      default: {
+      default:
         Icon = weatherOutput.status;
         IconColor = "#f9f9f9";
-      }
+        break;
     }
     return <i style={{ color: IconColor, fontSize: "12px" }}>{Icon}</i>;
   }
