@@ -3,18 +3,18 @@ import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
 import * as zebar from "https://esm.sh/zebar@2";
 
 const providers = zebar.createProviderGroup({
-  network: { type: "network", refreshInterval: 3000 },
+  // cpu: { type: "cpu" },
+  // memory: { type: "memory" },
+  network: { type: "network", refreshInterval: 4000 },
   glazewm: { type: "glazewm" },
-  cpu: { type: "cpu" },
   date: { type: "date", formatting: "EEE MMM d, t" },
-  battery: { type: "battery", refreshInterval: 1000 },
-  memory: { type: "memory" },
+  battery: { type: "battery", refreshInterval: 3000 },
   weather: {
     type: "weather",
     latitude: 34.07005584776311,
     longitude: -118.45003755474067,
   },
-  media: { type: "media" },
+  media: { type: "media", refreshInterval: 3000 },
 });
 
 createRoot(document.getElementById("root")).render(<App />);
@@ -39,10 +39,16 @@ function App() {
     }
 
     // truncate, remove ending whitespace and add ellipsis if needed
-    const truncate = (str, len) =>
-      str.length > len
-        ? str.slice(0, len - ellipsis.length).trim() + ellipsis
-        : str;
+    const truncate = (str, len) => {
+      if (str) {
+        str.length > len
+          ? str.slice(0, len - ellipsis.length).trim() + ellipsis
+          : str;
+        return str;
+      } else {
+        return "";
+      }
+    };
 
     return `${truncate(title, titleMax)}${separator}${truncate(artist, artistMax)}`;
   }
@@ -55,6 +61,7 @@ function App() {
       case "ethernet":
         iconClass = "nf nf-md-ethernet_cable";
         iconColor = "red";
+        break;
       case "wifi":
         if (networkOutput.defaultGateway?.signalStrength >= 80) {
           iconClass = "nf nf-md-wifi_strength_4";
