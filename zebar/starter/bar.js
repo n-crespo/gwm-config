@@ -50,8 +50,8 @@ function App() {
         ? str.slice(0, len - ellipsis.length).trim() + ellipsis
         : str;
 
-    const truncatedTitle = truncate(title, Math.min(titleMax, 50));
-    const truncatedArtist = truncate(artist, Math.min(artistMax, 19));
+    const truncatedTitle = truncate(title, Math.min(titleMax, 40));
+    const truncatedArtist = truncate(artist, Math.min(artistMax, 29));
 
     return `${truncatedTitle}${separator}${truncatedArtist}`;
   }
