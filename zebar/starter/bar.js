@@ -27,6 +27,7 @@ function App() {
   }, []);
 
   // ensures title + artist doesnt exceed 69 chars
+  // TODO: Make avilable length dynamic depending on on the other string's length
   function stripMedia(title, artist) {
     const ellipsis = "…";
     const separator = " - ";
