@@ -120,7 +120,7 @@ function App() {
     } else if (batteryOutput.chargePercent > 20) {
       // 20s
       iconClass = "nf nf-md-battery_20";
-      iconColor = "yellow";
+      iconColor = "#FFCE08";
       // teens
     } else if (batteryOutput.chargePercent > 10) {
       iconClass = "nf nf-md-battery_10";
