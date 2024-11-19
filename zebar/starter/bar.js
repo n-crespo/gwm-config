@@ -127,7 +127,7 @@ function App() {
       iconColor = "red";
     } else {
       // single digits
-      iconClass = "nf nf-md-battery_0";
+      iconClass = "nf nf-md-battery_outline";
       iconColor = "red";
     }
 
