@@ -324,7 +324,7 @@ function App() {
                 style={{
                   color: "#fad12f",
                   fontSize: "16px",
-                  verticalAlign: "-1px",
+                  verticalAlign: "-1.5px",
                 }}
               >
                 󱐋
