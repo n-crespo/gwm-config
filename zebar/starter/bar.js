@@ -49,8 +49,8 @@ function App() {
 
   // Get icon to show for current network status.
   function getNetworkIcon(networkOutput) {
-    let iconClass = "";
-    let iconColor = "white";
+    let iconClass;
+    let iconColor;
     switch (networkOutput.defaultInterface?.type) {
       case "ethernet":
         iconClass = "nf nf-md-ethernet_cable";
@@ -94,28 +94,40 @@ function App() {
       iconClass = "nf nf-md-battery_90";
       iconColor = "green";
     } else if (batteryOutput.chargePercent > 80) {
+      // 80s
       iconClass = "nf nf-md-battery_80";
       iconColor = "green";
     } else if (batteryOutput.chargePercent > 70) {
+      // 70s
       iconClass = "nf nf-md-battery_70";
-      iconColor = "lightgreen";
+      iconColor = "yellowgreen";
     } else if (batteryOutput.chargePercent > 60) {
+      // 60s
       iconClass = "nf nf-md-battery_60";
-      iconColor = "lightgreen";
+      iconColor = "yellowgreen";
     } else if (batteryOutput.chargePercent > 50) {
+      // 50s
       iconClass = "nf nf-md-battery_50";
-      iconColor = "lightgreen";
+      iconColor = "yellowgreen";
     } else if (batteryOutput.chargePercent > 40) {
+      // 40s
       iconClass = "nf nf-md-battery_40";
-      iconColor = "yellow";
+      iconColor = "yellowgreen";
     } else if (batteryOutput.chargePercent > 30) {
+      // 30s
       iconClass = "nf nf-md-battery_30";
-      iconColor = "yellow";
+      iconColor = "yellowgreen";
     } else if (batteryOutput.chargePercent > 20) {
+      // 20s
       iconClass = "nf nf-md-battery_20";
-      iconColor = "orange";
+      iconColor = "yellow";
+      // teens
     } else if (batteryOutput.chargePercent > 10) {
       iconClass = "nf nf-md-battery_10";
+      iconColor = "red";
+    } else {
+      // single digits
+      iconClass = "nf nf-md-battery_0";
       iconColor = "red";
     }
 
