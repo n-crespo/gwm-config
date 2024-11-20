@@ -40,10 +40,6 @@ function App() {
     if (!title) title = "";
     if (!artist) artist = "";
 
-    title =
-      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-    artist = "?";
-
     // ensure these aren't negative
     let titleMax = Math.max(0, availableLength - artist.length);
     let artistMax = Math.max(0, availableLength - title.length);
