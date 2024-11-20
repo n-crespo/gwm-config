@@ -5,10 +5,10 @@ import * as zebar from "https://esm.sh/zebar@2";
 const providers = zebar.createProviderGroup({
   // cpu: { type: "cpu" },
   // memory: { type: "memory" },
-  network: { type: "network", refreshInterval: 4000 },
+  network: { type: "network", refreshInterval: 7000 },
   glazewm: { type: "glazewm" },
   date: { type: "date", formatting: "EEE MMM d, t" },
-  battery: { type: "battery", refreshInterval: 3000 },
+  battery: { type: "battery", refreshInterval: 15000 },
   weather: {
     type: "weather",
     latitude: 34.07005584776311,
@@ -30,7 +30,7 @@ function App() {
   function stripMedia(title, artist) {
     const ellipsis = "…";
     const separator = " - ";
-    const maxLength = 74;
+    const maxLength = 73;
 
     // Calculate the space available for title and artist
     const separatorLength = separator.length;
@@ -40,12 +40,13 @@ function App() {
     if (!title) title = "";
     if (!artist) artist = "";
 
-    let titleMax = availableLength - artist.length;
-    let artistMax = availableLength - title.length;
+    title =
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    artist = "?";
 
-    // Ensure minimum truncation limits
-    titleMax = Math.max(0, titleMax);
-    artistMax = Math.max(0, artistMax);
+    // ensure these aren't negative
+    let titleMax = Math.max(0, availableLength - artist.length);
+    let artistMax = Math.max(0, availableLength - title.length);
 
     // Truncate function
     const truncate = (str, len) => {
@@ -59,10 +60,16 @@ function App() {
       }
     };
 
+    if (title.length + artist.length <= availableLength) {
+      console.log("not truncating...");
+      return `${title}${separator}${artist}`;
+    }
+
     const truncatedTitle = truncate(
       title,
       Math.max(titleMax - 1, availableLength - 20),
     );
+
     const truncatedArtist = truncate(
       artist,
       Math.max(
