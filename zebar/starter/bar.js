@@ -38,6 +38,9 @@ function App() {
     const availableLength = maxLength - separatorLength;
 
     // Determine truncation limits
+    if (!title) title = "";
+    if (!artist) artist = "";
+
     let titleMax = availableLength - artist.length;
     let artistMax = availableLength - title.length;
 
@@ -46,13 +49,20 @@ function App() {
     artistMax = Math.max(0, artistMax);
 
     // Truncate function
-    const truncate = (str, len) =>
-      str.length > len
-        ? str.slice(0, len - ellipsis.length).trim() + ellipsis
-        : str;
+    const truncate = (str, len) => {
+      if (str && typeof str === "string") {
+        return str.length > len
+          ? str.slice(0, len - ellipsis.length).trim() + ellipsis
+          : str;
+      } else {
+        return "?";
+      }
+    };
 
-    const truncatedTitle = truncate(title, Math.min(titleMax, 40));
-    const truncatedArtist = truncate(artist, Math.min(artistMax, 29));
+    console.log("title limit: ", Math.max(titleMax, 36));
+    const truncatedTitle = truncate(title, Math.max(titleMax, 36));
+    console.log("truncated title length: ", truncatedTitle.length);
+    const truncatedArtist = truncate(artist, Math.max(artistMax, 25));
 
     return `${truncatedTitle}${separator}${truncatedArtist}`;
   }
@@ -175,7 +185,7 @@ function App() {
         IconColor = "#9c9c9c";
         break;
       case "cloudy_night":
-        Icon = " ";
+        Icon = "  ";
         IconColor = "#9c9c9c";
         break;
       case "light_rain_day":
