@@ -26,12 +26,11 @@ function App() {
     providers.onOutput(() => setOutput(providers.outputMap));
   }, []);
 
-  // ensures title + artist doesnt exceed 69 chars
-  // TODO: Make avilable length dynamic depending on on the other string's length
+  // ensures title + artist doesnt exceed 70 chars
   function stripMedia(title, artist) {
     const ellipsis = "…";
     const separator = " - ";
-    const maxLength = 80;
+    const maxLength = 70;
 
     // Calculate the space available for title and artist
     const separatorLength = separator.length;
@@ -51,18 +50,26 @@ function App() {
     // Truncate function
     const truncate = (str, len) => {
       if (str && typeof str === "string") {
-        return str.length > len
-          ? str.slice(0, len - ellipsis.length).trim() + ellipsis
-          : str;
+        if (str.length > len) {
+          return str.slice(0, len - ellipsis.length).trim() + ellipsis;
+        }
+        return str;
       } else {
         return "?";
       }
     };
 
-    console.log("title limit: ", Math.max(titleMax, 36));
-    const truncatedTitle = truncate(title, Math.max(titleMax, 36));
-    console.log("truncated title length: ", truncatedTitle.length);
-    const truncatedArtist = truncate(artist, Math.max(artistMax, 25));
+    const truncatedTitle = truncate(
+      title,
+      Math.max(titleMax - 1, availableLength - 20),
+    );
+    const truncatedArtist = truncate(
+      artist,
+      Math.max(
+        artistMax,
+        availableLength - truncatedTitle.length - separatorLength - 1,
+      ),
+    );
 
     return `${truncatedTitle}${separator}${truncatedArtist}`;
   }
