@@ -32,17 +32,13 @@ function App() {
     const separator = " - ";
     const maxLength = 73;
 
-    // Calculate the space available for title and artist
-    const separatorLength = separator.length;
-    const availableLength = maxLength - separatorLength;
-
-    // Determine truncation limits
+    // Ensure default values
     if (!title) title = "";
     if (!artist) artist = "";
 
-    // ensure these aren't negative
-    let titleMax = Math.max(0, availableLength - artist.length);
-    let artistMax = Math.max(0, availableLength - title.length);
+    // Calculate the available length for title and artist
+    const separatorLength = separator.length;
+    const availableLength = maxLength - separatorLength;
 
     // Truncate function
     const truncate = (str, len) => {
@@ -51,28 +47,33 @@ function App() {
           return str.slice(0, len - ellipsis.length).trim() + ellipsis;
         }
         return str;
-      } else {
-        return "?";
       }
+      return "?";
     };
 
+    // Short-circuit: If total length is within limit, no truncation needed
     if (title.length + artist.length <= availableLength) {
-      console.log("not truncating...");
       return `${title}${separator}${artist}`;
     }
 
-    const truncatedTitle = truncate(
-      title,
-      Math.max(titleMax - 1, availableLength - 20),
+    // Start truncation loop
+    let truncatedTitle = truncate(title, availableLength);
+    let truncatedArtist = truncate(
+      artist,
+      availableLength - truncatedTitle.length,
     );
 
-    const truncatedArtist = truncate(
-      artist,
-      Math.max(
-        artistMax,
-        availableLength - truncatedTitle.length - separatorLength - 1,
-      ),
-    );
+    // Adjust if combined length still exceeds maxLength
+    while (
+      truncatedTitle.length + truncatedArtist.length + separatorLength >
+      maxLength
+    ) {
+      if (truncatedTitle.length > truncatedArtist.length) {
+        truncatedTitle = truncate(truncatedTitle, truncatedTitle.length - 1);
+      } else {
+        truncatedArtist = truncate(truncatedArtist, truncatedArtist.length - 1);
+      }
+    }
 
     return `${truncatedTitle}${separator}${truncatedArtist}`;
   }
@@ -261,7 +262,7 @@ function App() {
       </div>
 
       <div className="center">
-        <div className="chip">
+        <div className="media">
           {/* Checking if position and startTime are both 0 */}
           {(() => {
             // const { media } = output;

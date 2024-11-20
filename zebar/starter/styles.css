@@ -46,6 +46,7 @@ body,
   justify-self: center;
   font-size: 11px;
   color: rgb(255 255 255 / 50%);
+  white-space: nowrap;
 }
 
 .right {
