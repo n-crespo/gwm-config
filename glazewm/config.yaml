@@ -235,13 +235,13 @@ keybindings:
     bindings: ["alt+shift+j"]
 
   # Resize focused window by a percentage or pixel amount.
-  - commands: ["resize --width -5%"]
+  - commands: ["resize --width -3%"]
     bindings: ["alt+u"]
-  - commands: ["resize --width +5%"]
+  - commands: ["resize --width +3%"]
     bindings: ["alt+p"]
-  - commands: ["resize --height +5%"]
+  - commands: ["resize --height +3%"]
     bindings: ["alt+o"]
-  - commands: ["resize --height -5%"]
+  - commands: ["resize --height -3%"]
     bindings: ["alt+i"]
 
   # As an alternative to the resize keybindings above, resize mode enables
