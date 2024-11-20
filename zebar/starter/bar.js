@@ -30,7 +30,7 @@ function App() {
   function stripMedia(title, artist) {
     const ellipsis = "…";
     const separator = " - ";
-    const maxLength = 70;
+    const maxLength = 74;
 
     // Calculate the space available for title and artist
     const separatorLength = separator.length;
