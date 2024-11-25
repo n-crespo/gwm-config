@@ -258,6 +258,8 @@ keybindings:
   # be inserted.
   - commands: ["toggle-tiling-direction"]
     bindings: ["alt+shift+d"]
+  - commands: ["toggle-tiling-direction"]
+    bindings: ["alt+v"]
 
   # Change focus from tiling windows -> floating -> fullscreen.
   - commands: ["wm-cycle-focus"]
@@ -311,10 +313,15 @@ keybindings:
   #   bindings: ["alt+shift+w"]
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  - commands: ["focus --next-workspace"]
+  - commands: ["focus --next-active-workspace"]
     bindings: ["alt+d"]
-  - commands: ["focus --prev-workspace"]
+  - commands: ["focus --prev-active-workspace"]
     bindings: ["alt+a"]
+
+  - commands: ["move --next-workspace"]
+    bindings: ["alt+shift+d"]
+  - commands: ["move --prev-workspace"]
+    bindings: ["alt+shift+a"]
 
   # Focus the workspace that last had focus.
   - commands: ["focus --recent-workspace"]
