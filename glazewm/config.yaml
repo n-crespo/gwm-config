@@ -309,6 +309,9 @@ keybindings:
   - commands: ["shell-exec brave --profile-directory=default"]
     bindings: ["alt+w"]
 
+  - commands: ['shell-exec alacritty -o "shell=\"pwsh"\" -e btop']
+    bindings: ["alt+b"]
+
   # - commands: ["shell-exec brave"]
   #   bindings: ["alt+shift+w"]
 
