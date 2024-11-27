@@ -168,7 +168,7 @@ function App() {
         className={iconClass}
         style={{
           color: iconColor,
-          fontSize: "12px",
+          fontSize: "11px",
           verticalAlign: "+1px",
         }}
       ></i>
@@ -207,7 +207,7 @@ function App() {
       case "light_rain_night":
         Icon = " ";
         IconColor = "#7fb4ca";
-        FontSize = "14px";
+        FontSize = "15px";
         break;
       case "heavy_rain_day":
         Icon = " ";
@@ -238,7 +238,16 @@ function App() {
         IconColor = "#f9f9f9";
         break;
     }
-    return <i style={{ color: IconColor, fontSize: FontSize }}>{Icon}</i>;
+    return (
+      <i
+        style={{
+          color: IconColor,
+          fontSize: FontSize,
+        }}
+      >
+        {Icon}
+      </i>
+    );
   }
 
   return (
