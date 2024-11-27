@@ -13,6 +13,7 @@ body {
   color: rgb(255 255 255 / 100%);
   font-family: "JetBrainsMono Nerd Font";
   font-size: 12px;
+  /* this is 9 pt font */
   overflow: hidden;
 }
 
