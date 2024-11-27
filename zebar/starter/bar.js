@@ -168,7 +168,7 @@ function App() {
         className={iconClass}
         style={{
           color: iconColor,
-          fontSize: "11px",
+          fontSize: "11.5px",
           verticalAlign: "+1px",
         }}
       ></i>
@@ -357,11 +357,12 @@ function App() {
               <i
                 style={{
                   color: "#fad12f",
-                  fontSize: "16px",
-                  verticalAlign: "-1.5px",
+                  fontSize: "12px",
+                  verticalAlign: "0px",
+                  paddingRight: "2px",
                 }}
               >
-                󱐋
+                
               </i>
             )}
             {!output.battery.isCharging && getBatteryIcon(output.battery)}
