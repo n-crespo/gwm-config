@@ -17,3 +17,6 @@
  at line 186 column 15
 [2m2024-11-16T05:48:27.024136Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute '%userprofile%/.glzr/zebar/start.bat'.\n\nError: Program path is not valid for command '%userprofile%/.glzr/zebar/start.bat'."
 [2m2024-11-16T06:15:17.260653Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute '%userprofile%/.glzr/zebar/start.bat'.\n\nError: Program path is not valid for command '%userprofile%/.glzr/zebar/start.bat'."
+[2m2024-12-02T19:29:22.998488Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-12-02T19:29:39.124078Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-12-02T19:31:35.327156Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.

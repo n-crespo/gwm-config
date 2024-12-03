@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "https://esm.sh/react@18?dev";
 import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
-import * as zebar from "https://esm.sh/zebar@2";
+import * as zebar from "https://esm.sh/zebar@2.5.1";
 
 const providers = zebar.createProviderGroup({
   // cpu: { type: "cpu" },
@@ -247,6 +247,106 @@ function App() {
       >
         {Icon}
       </i>
+    );
+  }
+
+  function getAudioOutputIcon(name) {
+    let iconClass = "";
+    let iconColor = "#808080";
+    if (name == null) {
+      return " ";
+    } else if (name == "Headphones (Nothing Ear (a))") {
+      // iconClass = "nf-md-headphones";
+      iconClass = "nf-oct-dot_fill";
+      iconColor = "#4b73ffbf";
+    } else if (name.includes("Speakers (Realtek(R) Audio)")) {
+      // iconClass = "nf-md-speaker";
+      return "";
+    } else {
+      return name;
+    }
+    return (
+      <i
+        className={iconClass}
+        style={{ color: iconColor, fontSize: "13px" }}
+      ></i>
+    );
+  }
+
+  function getVolumeLevelIcon(volumeOutput) {
+    let iconColor = "white";
+    let iconClass = "nf-md-volume_mute";
+    let paddingRight = "3px";
+    if (volumeOutput == null) {
+      iconClass = " ";
+    } else if (volumeOutput == 0) {
+      iconClass = "nf-md-volume_variant_off";
+      iconColor = "red";
+    } else if (volumeOutput <= 50) {
+      iconClass = "nf-md-volume_medium";
+    } else if (volumeOutput > 50) {
+      iconClass = "nf-md-volume_high";
+      paddingRight = "5px";
+    }
+    return (
+      <i
+        className={iconClass}
+        style={{
+          color: iconColor,
+          paddingRight: paddingRight,
+          fontSize: "14px",
+        }}
+      ></i>
+    );
+  }
+
+  function getAudioOutputIcon(name) {
+    let iconClass = "";
+    let iconColor = "#808080";
+    if (name == null) {
+      return " ";
+    } else if (name == "Headphones (Nothing Ear (a))") {
+      // iconClass = "nf-md-headphones";
+      iconClass = "nf-oct-dot_fill";
+      iconColor = "#4b73ffbf";
+    } else if (name.includes("Speakers (Realtek(R) Audio)")) {
+      // iconClass = "nf-md-speaker";
+      return "";
+    } else {
+      return name;
+    }
+    return (
+      <i
+        className={iconClass}
+        style={{ color: iconColor, fontSize: "13px" }}
+      ></i>
+    );
+  }
+
+  function getVolumeLevelIcon(volumeOutput) {
+    let iconColor = "white";
+    let iconClass = "nf-md-volume_mute";
+    let paddingRight = "3px";
+    if (volumeOutput == null) {
+      iconClass = " ";
+    } else if (volumeOutput == 0) {
+      iconClass = "nf-md-volume_variant_off";
+      iconColor = "red";
+    } else if (volumeOutput <= 50) {
+      iconClass = "nf-md-volume_medium";
+    } else if (volumeOutput > 50) {
+      iconClass = "nf-md-volume_high";
+      paddingRight = "5px";
+    }
+    return (
+      <i
+        className={iconClass}
+        style={{
+          color: iconColor,
+          paddingRight: paddingRight,
+          fontSize: "14px",
+        }}
+      ></i>
     );
   }
 
