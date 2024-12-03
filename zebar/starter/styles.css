@@ -15,6 +15,7 @@ body {
   font-size: 12px;
   /* this is 9 pt font */
   overflow: hidden;
+  white-space: nowrap;
 }
 
 html,
@@ -39,7 +40,7 @@ body,
 .center,
 .right {
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 
 .center {
@@ -64,10 +65,6 @@ body,
   margin-right: 12px;
   vertical-align: "top";
 }
-
-/* .weather { */
-/*   margin-right: 18px; */
-/* } */
 
 .workspaces {
   display: flex;
@@ -122,4 +119,8 @@ body,
 
 .date {
   margin-left: 4px;
+}
+
+.audio {
+  align-items: center;
 }

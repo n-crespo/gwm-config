@@ -313,43 +313,20 @@ function App() {
             ></button>
           </>
         )}
-
         {output.network && (
           <div className="network">
             {getNetworkIcon(output.network)}
-            {/* this displays the network name */}
+            {/* this displays the network name */}{" "}
             {/* {output.network.defaultGateway?.ssid} */}
           </div>
         )}
-
         {output.weather && (
           <div className="weather">
-            {/* let IconClass, IconColor = getWeatherIcon(output.weather); */}
-            {/* <i className={IconClass} style={{ color: IconColor }}></i> */}
             {getWeatherIcon(output.weather)}
             {"  "}
             {Math.round(output.weather.fahrenheitTemp)}°F
           </div>
         )}
-
-        {/* {output.memory && ( */}
-        {/*   <div className="memory"> */}
-        {/*     󰍛 */}
-        {/*     {" " + Math.round(output.memory.usage)}% */}
-        {/*   </div> */}
-        {/* )} */}
-
-        {/* {output.cpu && ( */}
-        {/*   <div className="cpu"> */}
-        {/*     <i className="nf nf-oct-cpu"></i> */}
-        {/**/}
-        {/* Change the text color if the CPU usage is high. */}
-        {/*     <span className={output.cpu.usage > 85 ? "high-usage" : ""}> */}
-        {/*       {Math.round(output.cpu.usage)}% */}
-        {/*     </span> */}
-        {/*   </div> */}
-        {/* )} */}
-
         {output.battery && (
           <div className={`battery ${output.battery.isCharging && "charging"}`}>
             {/* Show icon for whether battery is charging. */}{" "}
@@ -366,7 +343,10 @@ function App() {
               </i>
             )}
             {!output.battery.isCharging && getBatteryIcon(output.battery)}
-            {" " + Math.round(output.battery.chargePercent)}%
+            {" " +
+              Math.round(
+                output.battery.chargePercent,
+              )}%
           </div>
         )}
 
