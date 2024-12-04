@@ -259,6 +259,7 @@ function App() {
     } else if (volumeOutput == 0) {
       iconClass = "nf-md-volume_variant_off";
       iconColor = "red";
+      paddingRight = "5px";
     } else if (volumeOutput <= 50) {
       iconClass = "nf-md-volume_medium";
     } else if (volumeOutput > 50) {
