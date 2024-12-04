@@ -108,7 +108,7 @@ function App() {
     return (
       <i
         className={iconClass}
-        style={{ color: iconColor, fontSize: "13px" }}
+        style={{ color: iconColor, fontSize: "12px" }}
       ></i>
     );
   }
