@@ -272,7 +272,6 @@ function App() {
         style={{
           color: iconColor,
           paddingRight: paddingRight,
-          fontSize: "14px",
         }}
       ></i>
     );
@@ -284,9 +283,8 @@ function App() {
     if (name == null) {
       return " ";
     } else if (name == "Headphones (Nothing Ear (a))") {
-      // iconClass = "nf-md-headphones";
-      iconClass = "nf-oct-dot_fill";
-      iconColor = "#4b73ffbf";
+      iconClass = "nf-md-headphones";
+      iconColor = "#4c68cb";
     } else if (name.includes("Speakers (Realtek(R) Audio)")) {
       // iconClass = "nf-md-speaker";
       return "";
@@ -296,7 +294,7 @@ function App() {
     return (
       <i
         className={iconClass}
-        style={{ color: iconColor, fontSize: "11px" }}
+        style={{ color: iconColor, fontSize: "11px", paddingLeft: "4px" }}
       ></i>
     );
   }

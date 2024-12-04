@@ -72,6 +72,10 @@ body,
   top: 3px;
 }
 
+.audio {
+  align-items: center;
+}
+
 .workspaces {
   display: flex;
   align-items: center;
