@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "https://esm.sh/react@18?dev";
 import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
-import * as zebar from "https://esm.sh/zebar@2";
+import * as zebar from "https://esm.sh/zebar@2.6.1";
 
 const providers = zebar.createProviderGroup({
   // cpu: { type: "cpu" },
@@ -344,7 +344,15 @@ function App() {
         {output.glazewm && (
           <>
             {output.glazewm.bindingModes.map((bindingMode) => (
-              <button className="binding-mode" key={bindingMode.name}>
+              <button
+                className="binding-mode"
+                key={bindingMode.name}
+                onClick={() =>
+                  output.glazewm.runCommand(
+                    `wm-disable-binding-mode --name ${bindingMode.name}`,
+                  )
+                }
+              >
                 {bindingMode.displayName ?? bindingMode.name}
               </button>
             ))}
