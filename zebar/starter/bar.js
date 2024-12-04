@@ -115,7 +115,6 @@ function App() {
   }
 
   // Get icon to show for how much of the battery is charged.
-  // Get icon to show for how much of the battery is charged.
   function getBatteryIcon(batteryOutput) {
     let iconClass = "nf nf-md-battery_0";
     let iconColor = "red"; // Default color (red for low battery)
@@ -325,7 +324,6 @@ function App() {
         <div className="media">
           {/* Checking if position and startTime are both 0 */}
           {(() => {
-            // const { media } = output;
             const session = output.media?.session;
 
             if (session == null) {
@@ -335,15 +333,12 @@ function App() {
                 <>
                   {session?.isPlaying ? "󰝚 " : "󰐊 "}
                   {stripMedia(session?.title, session?.artist)}
-                  {/* {session?.title} {" - "} {session?.artist} */}
                 </>
               );
             }
           })()}
         </div>
       </div>
-      {/* {output.media.session?.title} -{" "} */}
-      {/* {output.media.session?.artist} */}
 
       <div className="right">
         {output.glazewm && (
@@ -362,13 +357,7 @@ function App() {
             ></button>
           </>
         )}
-        {output.network && (
-          <div className="network">
-            {getNetworkIcon(output.network)}
-            {/* this displays the network name */}{" "}
-            {/* {output.network.defaultGateway?.ssid} */}
-          </div>
-        )}
+
         {output.weather && (
           <div className="weather">
             {getWeatherIcon(output.weather)}
@@ -376,9 +365,17 @@ function App() {
             {Math.round(output.weather.fahrenheitTemp)}°F
           </div>
         )}
+
+        {output.network && (
+          <div className="network">
+            {getNetworkIcon(output.network)}
+            {/* this displays the network name */}{" "}
+            {/* {output.network.defaultGateway?.ssid} */}
+          </div>
+        )}
+
         {output.battery && (
           <div className={`battery ${output.battery.isCharging && "charging"}`}>
-            {/* Show icon for whether battery is charging. */}{" "}
             {output.battery.isCharging && (
               <i
                 style={{
@@ -391,10 +388,7 @@ function App() {
               </i>
             )}
             {!output.battery.isCharging && getBatteryIcon(output.battery)}
-            {" " +
-              Math.round(
-                output.battery.chargePercent,
-              )}%
+            {" " + Math.round(output.battery.chargePercent)}%
           </div>
         )}
         {output.audio?.defaultPlaybackDevice && (
