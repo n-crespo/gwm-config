@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "https://esm.sh/react@18?dev";
 import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
-import * as zebar from "https://esm.sh/zebar@2.5.1";
+import * as zebar from "https://esm.sh/zebar@2";
 
 const providers = zebar.createProviderGroup({
   // cpu: { type: "cpu" },
@@ -9,6 +9,7 @@ const providers = zebar.createProviderGroup({
   glazewm: { type: "glazewm" },
   date: { type: "date", formatting: "EEE MMM d, t" },
   battery: { type: "battery", refreshInterval: 15000 },
+  audio: { type: "audio" },
   weather: {
     type: "weather",
     latitude: 34.07005584776311,
@@ -250,29 +251,6 @@ function App() {
     );
   }
 
-  function getAudioOutputIcon(name) {
-    let iconClass = "";
-    let iconColor = "#808080";
-    if (name == null) {
-      return " ";
-    } else if (name == "Headphones (Nothing Ear (a))") {
-      // iconClass = "nf-md-headphones";
-      iconClass = "nf-oct-dot_fill";
-      iconColor = "#4b73ffbf";
-    } else if (name.includes("Speakers (Realtek(R) Audio)")) {
-      // iconClass = "nf-md-speaker";
-      return "";
-    } else {
-      return name;
-    }
-    return (
-      <i
-        className={iconClass}
-        style={{ color: iconColor, fontSize: "13px" }}
-      ></i>
-    );
-  }
-
   function getVolumeLevelIcon(volumeOutput) {
     let iconColor = "white";
     let iconClass = "nf-md-volume_mute";
@@ -296,6 +274,29 @@ function App() {
           paddingRight: paddingRight,
           fontSize: "14px",
         }}
+      ></i>
+    );
+  }
+
+  function getAudioOutputIcon(name) {
+    let iconClass = "";
+    let iconColor = "#808080";
+    if (name == null) {
+      return " ";
+    } else if (name == "Headphones (Nothing Ear (a))") {
+      // iconClass = "nf-md-headphones";
+      iconClass = "nf-oct-dot_fill";
+      iconColor = "#4b73ffbf";
+    } else if (name.includes("Speakers (Realtek(R) Audio)")) {
+      // iconClass = "nf-md-speaker";
+      return "";
+    } else {
+      return name;
+    }
+    return (
+      <i
+        className={iconClass}
+        style={{ color: iconColor, fontSize: "11px" }}
       ></i>
     );
   }
@@ -385,7 +386,6 @@ function App() {
                 style={{
                   color: "#fad12f",
                   fontSize: "12px",
-                  verticalAlign: "0px",
                   paddingRight: "2px",
                 }}
               >
@@ -399,7 +399,13 @@ function App() {
               )}%
           </div>
         )}
-
+        {output.audio?.defaultPlaybackDevice && (
+          <div className="audio">
+            {getVolumeLevelIcon(output.audio.defaultPlaybackDevice.volume)}
+            {output.audio.defaultPlaybackDevice.volume}
+            {getAudioOutputIcon(output.audio.defaultPlaybackDevice.name)}
+          </div>
+        )}
         <div className="date">{output.date?.formatted}</div>
       </div>
     </div>
