@@ -168,7 +168,7 @@ function App() {
         className={iconClass}
         style={{
           color: iconColor,
-          fontSize: "11.5px",
+          fontSize: "10.5px",
           verticalAlign: "+1px",
         }}
       ></i>
@@ -178,7 +178,7 @@ function App() {
   // Get icon to show for current weather status.
   function getWeatherIcon(weatherOutput) {
     let Icon = "test";
-    let IconColor = "purple";
+    let IconColor = "white";
     let FontSize = "11px";
     if (!weatherOutput || !weatherOutput.status) {
       return <i style={{ color: "#f9f9f9", fontSize: "12px" }}></i>;
