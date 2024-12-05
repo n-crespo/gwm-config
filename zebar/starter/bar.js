@@ -369,6 +369,7 @@ function App() {
               onClick={() =>
                 output.glazewm.runCommand("toggle-tiling-direction")
               }
+              style={{ fontSize: "10.5px" }}
             ></button>
           </>
         )}
