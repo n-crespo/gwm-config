@@ -42,6 +42,7 @@ body,
   display: flex;
   align-items: center;
   margin-top: 2px;
+  font-size: 12px;
 }
 
 .center {
@@ -64,7 +65,7 @@ body,
 .cpu,
 .audio,
 .battery {
-  margin-right: 12px;
+  margin-right: 14px;
   vertical-align: middle;
 }
 
@@ -82,7 +83,7 @@ body,
 }
 
 .workspace {
-  background: rgb(200 200 200 / 8%);
+  background: rgb(200 200 200 / 2%);
   margin-right: 4px;
   padding: 4px 8px;
   color: rgb(255 255 255 / 90%);
@@ -95,11 +96,11 @@ body,
   }
 
   &.focused {
-    background: #4b73ffbf;
+    background: #3359be;
   }
 
   &:hover {
-    background: rgb(75 115 255 / 50%);
+    background: rgb(51 89 190 / 20%);
   }
 }
 
@@ -113,6 +114,7 @@ body,
   border: 0;
   cursor: pointer;
   font-size: 11px;
+  margin-right: 15px;
 }
 
 .cpu .high-usage {

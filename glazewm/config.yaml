@@ -152,7 +152,7 @@ window_rules:
 
       - window_process:
           {
-            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
+            regex: "ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
           }
 
   - commands: ["set-floating"]
@@ -173,7 +173,7 @@ window_rules:
   - commands: ["move --workspace ticktick"]
     match:
       - window_title: { regex: "TickTick" }
-        # window_process: { regex: "brave" }
+        window_process: { regex: "brave" }
 
   - commands: ["move --workspace mail"]
     match:

@@ -109,7 +109,7 @@ function App() {
     return (
       <i
         className={iconClass}
-        style={{ color: iconColor, fontSize: "12px" }}
+        style={{ color: iconColor, fontSize: "11px", verticalAlign: "+1px" }}
       ></i>
     );
   }
@@ -179,7 +179,7 @@ function App() {
   function getWeatherIcon(weatherOutput) {
     let Icon = "test";
     let IconColor = "purple";
-    let FontSize = "12px";
+    let FontSize = "11px";
     if (!weatherOutput || !weatherOutput.status) {
       return <i style={{ color: "#f9f9f9", fontSize: "12px" }}></i>;
     }
@@ -283,7 +283,7 @@ function App() {
     if (name == null) {
       return " ";
     } else if (name == "Headphones (Nothing Ear (a))") {
-      iconClass = "nf-md-headphones";
+      iconClass = "nf-md-bluetooth";
       iconColor = "#4c68cb";
     } else if (name.includes("Speakers (Realtek(R) Audio)")) {
       // iconClass = "nf-md-speaker";
@@ -294,7 +294,12 @@ function App() {
     return (
       <i
         className={iconClass}
-        style={{ color: iconColor, fontSize: "11px", paddingLeft: "4px" }}
+        style={{
+          color: iconColor,
+          fontSize: "14px",
+          paddingLeft: "4px",
+          verticalAlign: "-1px",
+        }}
       ></i>
     );
   }
@@ -397,8 +402,9 @@ function App() {
               <i
                 style={{
                   color: "#fad12f",
-                  fontSize: "12px",
+                  fontSize: "10px",
                   paddingRight: "2px",
+                  verticalAlign: "+1px",
                 }}
               >
                 
