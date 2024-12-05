@@ -383,6 +383,14 @@ function App() {
           </div>
         )}
 
+        {output.audio?.defaultPlaybackDevice && (
+          <div className="audio">
+            {getVolumeLevelIcon(output.audio.defaultPlaybackDevice.volume)}
+            {output.audio.defaultPlaybackDevice.volume}
+            {getAudioOutputIcon(output.audio.defaultPlaybackDevice.name)}
+          </div>
+        )}
+
         {output.battery && (
           <div className={`battery ${output.battery.isCharging && "charging"}`}>
             {output.battery.isCharging && (
@@ -400,13 +408,7 @@ function App() {
             {" " + Math.round(output.battery.chargePercent)}%
           </div>
         )}
-        {output.audio?.defaultPlaybackDevice && (
-          <div className="audio">
-            {getVolumeLevelIcon(output.audio.defaultPlaybackDevice.volume)}
-            {output.audio.defaultPlaybackDevice.volume}
-            {getAudioOutputIcon(output.audio.defaultPlaybackDevice.name)}
-          </div>
-        )}
+
         <div className="date">{output.date?.formatted}</div>
       </div>
     </div>
