@@ -250,19 +250,20 @@ function App() {
     );
   }
 
-  function getVolumeLevelIcon(volumeOutput) {
+  function getVolumeLevelIcon(volumeLevel) {
     let iconColor = "white";
     let iconClass = "nf-md-volume_mute";
     let paddingRight = "3px";
-    if (volumeOutput == null) {
+    if (volumeLevel == null) {
       iconClass = " ";
-    } else if (volumeOutput == 0) {
+    } else if (volumeLevel == 0) {
       iconClass = "nf-md-volume_variant_off";
       iconColor = "red";
-      paddingRight = "5px";
-    } else if (volumeOutput <= 50) {
+    } else if (volumeLevel <= 30) {
+      iconClass = "nf-md-volume_low";
+    } else if (volumeLevel < 50) {
       iconClass = "nf-md-volume_medium";
-    } else if (volumeOutput > 50) {
+    } else {
       iconClass = "nf-md-volume_high";
       paddingRight = "5px";
     }
