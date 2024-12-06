@@ -121,14 +121,14 @@ function App() {
 
     if (batteryOutput.chargePercent == 100) {
       iconClass = "nf nf-md-battery";
-      iconColor = "#3BC95F";
+      iconColor = "#39C559";
     } else if (batteryOutput.chargePercent > 90) {
       iconClass = "nf nf-md-battery_90";
-      iconColor = "#3BC95F";
+      iconColor = "#39C559";
     } else if (batteryOutput.chargePercent > 80) {
       // 80s
       iconClass = "nf nf-md-battery_80";
-      iconColor = "#3BC95F";
+      iconColor = "#39C559";
     } else if (batteryOutput.chargePercent > 70) {
       // 70s
       iconClass = "nf nf-md-battery_70";
