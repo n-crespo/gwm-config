@@ -83,7 +83,7 @@ body,
 }
 
 .workspace {
-  background: rgb(200 200 200 / 2%);
+  background: rgb(200 200 200 / 10%);
   margin-right: 4px;
   padding: 4px 8px;
   color: rgb(255 255 255 / 90%);
@@ -100,7 +100,7 @@ body,
   }
 
   &:hover {
-    background: rgb(51 89 190 / 20%);
+    background: rgb(51 89 190 / 70%);
   }
 }
 
