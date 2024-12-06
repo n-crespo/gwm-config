@@ -154,6 +154,7 @@ window_rules:
           {
             regex: "ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
           }
+      - window_title: { regex: "Window Spy for AHKv2" }
 
   - commands: ["set-floating"]
     match:
@@ -172,7 +173,7 @@ window_rules:
 
   - commands: ["move --workspace ticktick"]
     match:
-      - window_title: { regex: "TickTick" }
+      - window_title: { regex: "^TickTick -*" }
         window_process: { regex: "brave" }
 
   - commands: ["move --workspace mail"]
