@@ -259,7 +259,7 @@ function App() {
     } else if (volumeLevel == 0) {
       iconClass = "nf-md-volume_variant_off";
       iconColor = "red";
-    } else if (volumeLevel <= 30) {
+    } else if (volumeLevel <= 15) {
       iconClass = "nf-md-volume_low";
     } else if (volumeLevel < 50) {
       iconClass = "nf-md-volume_medium";
