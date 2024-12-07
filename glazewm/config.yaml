@@ -278,8 +278,8 @@ keybindings:
     bindings: ["alt+shift+f"]
 
   # Change the focused window to be tiling.
-  # - commands: ["toggle-tiling"]
-  #   bindings: ["alt+t"]
+  - commands: ["toggle-tiling"]
+    bindings: ["alt+t"]
 
   # Change the focused window to be fullscreen.
   - commands: ["toggle-fullscreen"]
