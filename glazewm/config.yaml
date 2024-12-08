@@ -152,9 +152,10 @@ window_rules:
 
       - window_process:
           {
-            regex: "ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
+            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
           }
       - window_title: { regex: "Window Spy for AHKv2" }
+      # - window_class: { regex: "^HwndWrapper[TickTick.exe;;.*$" }
 
   - commands: ["set-floating"]
     match:
