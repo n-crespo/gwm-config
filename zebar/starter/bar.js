@@ -278,20 +278,21 @@ function App() {
     );
   }
 
+  // returns bluetooth icon if output is not default speakers
   function getAudioOutputIcon(name) {
     let iconClass = "";
     let iconColor = "#808080";
     if (name == null) {
       return " ";
-    } else if (name == "Headphones (Nothing Ear (a))") {
-      iconClass = "nf-md-bluetooth";
-      iconColor = "#4c68cb";
     } else if (name.includes("Speakers (Realtek(R) Audio)")) {
       // iconClass = "nf-md-speaker";
       return "";
     } else {
-      return name;
+      // if (name == "Headphones (Nothing Ear (a))")
+      iconClass = "nf-md-bluetooth";
+      iconColor = "#4c68cb";
     }
+    //   return name;
     return (
       <i
         className={iconClass}
