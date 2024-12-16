@@ -413,7 +413,8 @@ function App() {
           <div className="audio">
             <button
               className="audio"
-              onClick={() => output.media?.togglePlayPause()}
+              // NOTE: Change this to toggling mute when feature is added (#179)
+              onClick={() => output.audio.setVolume(0)}
               onWheel={(e) => {
                 // Calculate the new volume
                 const newVolume = Math.min(
