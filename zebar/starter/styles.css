@@ -93,13 +93,6 @@ body,
   cursor: pointer;
 }
 
-/* .audio button { */
-/*   cursor: pointer; */
-/*   border: none; */
-/*   background: none; */
-/*   padding: none; */
-/* } */
-
 .workspaces {
   display: flex;
   align-items: center;
