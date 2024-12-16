@@ -355,7 +355,7 @@ function App() {
                       output.audio.setVolume(newVolume);
                     }}
                   >
-                    {session?.isPlaying ? "󰏤" : "󰐊"}
+                    {session?.isPlaying ? "󰝚 " : "󰐊 "}
                     {"   "}
                     {stripMedia(session?.title, session?.artist)}
                   </button>
