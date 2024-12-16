@@ -52,6 +52,17 @@ body,
   white-space: nowrap;
 }
 
+.media button {
+  position: relative;
+  all: inherit;
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: -10px 0; /* Increase clickable height upwards and downwards */
+}
+
 .right {
   justify-self: end;
 }
@@ -74,8 +85,19 @@ body,
 }
 
 .audio {
-  align-items: center;
+  border: none;
+  padding: none;
+  background: none;
+  margin-right: 5px;
+  margin-left: -2px;
 }
+
+/* .audio button { */
+/*   cursor: pointer; */
+/*   border: none; */
+/*   background: none; */
+/*   padding: none; */
+/* } */
 
 .workspaces {
   display: flex;

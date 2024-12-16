@@ -339,8 +339,26 @@ function App() {
             } else {
               return (
                 <>
-                  {session?.isPlaying ? "󰝚 " : "󰐊 "}
-                  {stripMedia(session?.title, session?.artist)}
+                  <button
+                    onClick={() => output.media?.togglePlayPause()}
+                    onWheel={(e) => {
+                      // Calculate the new volume
+                      const newVolume = Math.min(
+                        100,
+                        Math.max(
+                          0,
+                          output.audio.defaultPlaybackDevice.volume +
+                            Math.sign(e.deltaY) * 1,
+                        ),
+                      );
+                      // Set the volume
+                      output.audio.setVolume(newVolume);
+                    }}
+                  >
+                    {session?.isPlaying ? "󰏤" : "󰐊"}
+                    {"   "}
+                    {stripMedia(session?.title, session?.artist)}
+                  </button>
                 </>
               );
             }
@@ -393,9 +411,29 @@ function App() {
 
         {output.audio?.defaultPlaybackDevice && (
           <div className="audio">
-            {getVolumeLevelIcon(output.audio.defaultPlaybackDevice.volume)}
-            {output.audio.defaultPlaybackDevice.volume}
-            {getAudioOutputIcon(output.audio.defaultPlaybackDevice.name)}
+            <button
+              className="audio"
+              onClick={() => output.media?.togglePlayPause()}
+              onWheel={(e) => {
+                // Calculate the new volume
+                const newVolume = Math.min(
+                  100,
+                  Math.max(
+                    0,
+                    output.audio.defaultPlaybackDevice.volume -
+                      Math.sign(e.deltaY) * 1,
+                  ),
+                );
+                // Set the volume
+                output.audio.setVolume(newVolume);
+              }}
+            >
+              {getVolumeLevelIcon(output.audio.defaultPlaybackDevice.volume)}
+              <i style={{ color: "white", fontStyle: "normal" }}>
+                {output.audio.defaultPlaybackDevice.volume}
+              </i>
+              {getAudioOutputIcon(output.audio.defaultPlaybackDevice.name)}
+            </button>
           </div>
         )}
 
