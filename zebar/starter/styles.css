@@ -108,7 +108,7 @@ body,
   cursor: pointer;
 
   &.displayed {
-    background: rgb(255 255 255 / 100%);
+    background: #3359be;
   }
 
   &.focused {
