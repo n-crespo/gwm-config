@@ -25,6 +25,7 @@ general:
   hide_method: "hide"
 
   # NOTE: this doesnt work bruh
+
   # Affects which windows get shown in the native Windows taskbar. Has no
   # effect if `hide_method: 'hide'`.
   # - 'true': Show all windows (regardless of workspace).
