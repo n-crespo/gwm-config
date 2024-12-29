@@ -93,7 +93,7 @@ window_behavior:
       centered: false
 
       # Whether to show floating windows as always on top.
-      shown_on_top: true
+      shown_on_top: false
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
