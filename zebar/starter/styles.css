@@ -108,15 +108,15 @@ body,
   cursor: pointer;
 
   &.displayed {
-    background: #3359be;
+    background: rgb(47 58 150 / 120%);
   }
 
   &.focused {
-    background: #3359be;
+    background: rgb(47 58 150 / 120%);
   }
 
   &:hover {
-    background: rgb(51 89 190 / 70%);
+    background: rgb(47 58 150 / 70%);
   }
 }
 
