@@ -313,6 +313,8 @@ function App() {
           <div className="workspaces">
             {output.glazewm.currentWorkspaces.map((workspace) => (
               <button
+                tabindex="-1"
+                aria-hidden="true"
                 className={`workspace ${workspace.hasFocus && "focused"} ${workspace.isDisplayed && "displayed"}`}
                 onClick={() =>
                   output.glazewm.runCommand(
@@ -340,6 +342,8 @@ function App() {
               return (
                 <>
                   <button
+                    tabindex="-1"
+                    aria-hidden="true"
                     onClick={() => output.media?.togglePlayPause()}
                     onWheel={(e) => {
                       // Calculate the new volume
@@ -384,6 +388,8 @@ function App() {
             ))}
 
             <button
+              tabindex="-1"
+              aria-hidden="true"
               className={`tiling-direction nf ${output.glazewm.tilingDirection === "horizontal" ? "nf-cod-split_horizontal" : "nf-cod-split_vertical"}`}
               onClick={() =>
                 output.glazewm.runCommand("toggle-tiling-direction")
@@ -413,6 +419,8 @@ function App() {
           <div className="audio">
             <button
               className="audio"
+              tabindex="-1"
+              aria-hidden="true"
               // NOTE: Change this to toggling mute when feature is added (#179)
               onClick={() => output.audio.setVolume(0)}
               onWheel={(e) => {
