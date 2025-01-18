@@ -10,11 +10,11 @@ const providers = zebar.createProviderGroup({
   date: { type: "date", formatting: "EEE MMM d, t" },
   battery: { type: "battery", refreshInterval: 15000 },
   audio: { type: "audio" },
-  weather: {
-    type: "weather",
-    latitude: 34.07005584776311,
-    longitude: -118.45003755474067,
-  },
+  // weather: {
+  //   type: "weather",
+  //   latitude: 34.07005584776311,
+  //   longitude: -118.45003755474067,
+  // },
   media: { type: "media", refreshInterval: 3000 },
 });
 
@@ -399,13 +399,13 @@ function App() {
           </>
         )}
 
-        {output.weather && (
+        {/* output.weather && (
           <div className="weather">
             {getWeatherIcon(output.weather)}
             {"  "}
             {Math.round(output.weather.fahrenheitTemp)}°F
           </div>
-        )}
+        ) */}
 
         {output.network && (
           <div className="network">
