@@ -313,7 +313,7 @@ keybindings:
   - commands: ["shell-exec wt"]
     bindings: ["alt+enter"]
 
-  - commands: ['shell-exec alacritty -o "shell=\"pwsh\""']
+  - commands: ['shell-exec wt --profile "PowerShell"']
     bindings: ["alt+shift+enter"]
 
   - commands: ["shell-exec brave --profile-directory=default"]
