@@ -110,11 +110,11 @@ body,
   cursor: pointer;
 
   &.displayed {
-    background-color: rgba(60, 60, 60, 0.7);
+    background-color: rgba(60, 60, 60, 0.6);
   }
 
   &.focused {
-    background-color: rgba(60, 60, 60, 0.7);
+    background-color: rgba(60, 60, 60, 0.6);
   }
 
   &:hover {
