@@ -181,16 +181,16 @@ window_rules:
   - commands: ["move --workspace mail"]
     match:
       - window_title:
-          { regex: "(Gmail - Inbox - nicolasecrespo@gmail.com - Gmail)" }
-        # window_process: { equals: "brave" }
+          {
+            regex: "(Gmail - Inbox( \\(\\d+\\))? - nicolasecrespo@gmail.com - Gmail)",
+          }
 
   - commands: ["move --workspace umail"]
     match:
       - window_title:
           {
-            regex: "(Gmail - Inbox - ncrespo@g.ucla.edu - Google Apps for UCLA Mail)",
+            regex: "(Gmail - Inbox( \\(\\d+\\))? - ncrespo@g.ucla.edu - Google Apps for UCLA Mail)",
           }
-        # window_process: { equals: "thorium" }
 
   - commands: ["move --workspace spotify"]
     match:
