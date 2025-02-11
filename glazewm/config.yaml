@@ -22,7 +22,7 @@ general:
   # visible in the taskbar.
   # - 'hide': Legacy method (v3.5 and earlier) that has a brief animation,
   # but has stability issues with some apps.
-  hide_method: "hide"
+  hide_method: "cloak"
 
   # NOTE: this doesnt work bruh
 
@@ -46,14 +46,14 @@ gaps:
   scale_with_dpi: true
 
   # Gap between adjacent windows.
-  inner_gap: "1px"
+  inner_gap: "0px"
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: "2px"
-    right: "1px"
+    top: "1px"
+    right: "0px"
     bottom: "1px"
-    left: "1px"
+    left: "0px"
 
 window_effects:
   # Visual effects to apply to the focused window.
