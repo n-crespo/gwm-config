@@ -24,7 +24,7 @@ general:
   # but has stability issues with some apps.
   hide_method: "cloak"
 
-  # NOTE: this doesnt work bruh
+  # NOTE: this works very sporadically (with cloak)
 
   # Affects which windows get shown in the native Windows taskbar. Has no
   # effect if `hide_method: 'hide'`.
@@ -78,9 +78,9 @@ window_effects:
   other_windows:
     transparency:
       enabled: false
-      opacity: 70%
+      opacity: 100%
     border:
-      enabled: true
+      enabled: false
       color: "#222222"
 
 window_behavior:
