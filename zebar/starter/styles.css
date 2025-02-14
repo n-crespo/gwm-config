@@ -65,6 +65,7 @@ body,
 
 .right {
   justify-self: end;
+  margin-right: 2px;
 }
 
 .logo,
