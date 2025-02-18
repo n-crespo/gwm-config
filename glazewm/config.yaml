@@ -152,11 +152,10 @@ window_rules:
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
 
       - window_title: { regex: "Focus Timer" } # Win + R
-      - window_process: { equals: "GHelper" }
 
       - window_process:
           {
-            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelperr|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
+            regex: "TickTick|ScreenClippingHost|Wintoys|msrdc|GHelper|QuickLook|ScreenColorPicker|LockApp|Flow.Launcher",
           }
       - window_title: { regex: "Window Spy for AHKv2" }
       # - window_class: { regex: "^HwndWrapper[TickTick.exe;;.*$" }
@@ -322,7 +321,7 @@ keybindings:
   - commands: ["shell-exec brave --profile-directory=default"]
     bindings: ["alt+w"]
 
-  - commands: ['shell-exec alacritty -o "shell=\"pwsh"\" -e btop']
+  - commands: ["shell-exec wt nt -c btop"]
     bindings: ["alt+b"]
 
   # - commands: ["shell-exec brave"]
