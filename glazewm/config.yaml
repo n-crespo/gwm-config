@@ -80,7 +80,7 @@ window_effects:
       enabled: false
       opacity: 100%
     border:
-      enabled: false
+      enabled: true
       color: "#222222"
 
 window_behavior:
