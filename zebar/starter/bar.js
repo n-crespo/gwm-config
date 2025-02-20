@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "https://esm.sh/react@18?dev";
 import { createRoot } from "https://esm.sh/react-dom@18/client?dev";
-import * as zebar from "https://esm.sh/zebar@2.6.1";
+import * as zebar from "https://esm.sh/zebar@2";
 
 const providers = zebar.createProviderGroup({
   // cpu: { type: "cpu" },
@@ -10,6 +10,7 @@ const providers = zebar.createProviderGroup({
   date: { type: "date", formatting: "EEE MMM d, t" },
   battery: { type: "battery", refreshInterval: 15000 },
   audio: { type: "audio" },
+  // systray: { type: "systray" },
   // weather: {
   //   type: "weather",
   //   latitude: 34.07005584776311,

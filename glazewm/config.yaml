@@ -1,14 +1,14 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ["shell-exec zebar"]
+  startup_commands: ["shell-exec yasb"]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+  shutdown_commands: ["shell-exec taskkill /IM yasb.exe /F"]
 
   # Commands to run after the WM config is reloaded.
-  config_reload_commands: ["shell-exec zebar"]
+  config_reload_commands: ["shell-exec yasb"]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -108,37 +108,46 @@ window_behavior:
       shown_on_top: true
 
 workspaces:
-  - name: "term"
-    display_name: "  "
+  - name: "0"
+    display_name: ""
     keep_alive: false
 
   - name: "1"
+    display_name: "1"
   - name: "2"
+    display_name: "2"
   - name: "3"
+    display_name: "3"
   - name: "4"
+    display_name: "4"
   - name: "5"
+    display_name: "5"
   - name: "6"
+    display_name: "6"
   - name: "7"
+    display_name: "7"
   - name: "8"
+    display_name: "8"
   - name: "9"
+    display_name: "9"
 
-  - name: "messages" # for beeper + phone link
-    display_name: "󰄡 "
+  - name: "10" # for beeper + phone link
+    display_name: "󰄡"
 
   - name: "mail"
-    display_name: "󰇰 "
+    display_name: "󰇰"
     keep_alive: false
 
   - name: "umail" # ucla mail
-    display_name: "󰻨 "
+    display_name: "󰻨"
     keep_alive: false
 
   - name: "spotify"
-    display_name: "  "
+    display_name: ""
     keep_alive: false
 
   - name: "ticktick"
-    display_name: "󰄴 "
+    display_name: "󰄴"
     keep_alive: false
 
 window_rules:
@@ -198,7 +207,7 @@ window_rules:
     match:
       - window_process: { equals: "Spotify" }
 
-  - commands: ["move --workspace messages"]
+  - commands: ["move --workspace 11"]
     match:
       - window_process: { equals: "Beeper" }
 
@@ -343,7 +352,7 @@ keybindings:
     bindings: ["alt+`"]
 
   # Change focus to a workspace defined in `workspaces` config.
-  - commands: ["focus --workspace term"]
+  - commands: ["focus --workspace 0"]
     bindings: ["alt+escape"]
   - commands: ["focus --workspace 1"]
     bindings: ["alt+1"]
@@ -367,7 +376,7 @@ keybindings:
     bindings: ["alt+e"]
   - commands: ["focus --workspace spotify"]
     bindings: ["alt+s"]
-  - commands: ["focus --workspace messages"]
+  - commands: ["focus --workspace 11"]
     bindings: ["alt+m"]
   - commands: ["focus --workspace mail"]
     bindings: ["alt+,"]
@@ -386,7 +395,7 @@ keybindings:
   #   bindings: ["alt+shift+s"]
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ["move --workspace term"]
+  - commands: ["move --workspace 0"]
     bindings: ["alt+shift+escape"]
   - commands: ["move --workspace 1"]
     bindings: ["alt+shift+1"]
@@ -410,7 +419,7 @@ keybindings:
     bindings: ["alt+shift+e"]
   - commands: ["move --workspace spotify"]
     bindings: ["alt+shift+s"]
-  - commands: ["move --workspace messages"]
+  - commands: ["move --workspace 11"]
     bindings: ["alt+shift+m"]
   - commands: ["move --workspace mail"]
     bindings: ["alt+shift+,"]
