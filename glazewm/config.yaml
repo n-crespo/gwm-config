@@ -134,19 +134,19 @@ workspaces:
   - name: "10" # for beeper + phone link
     display_name: "󰄡"
 
-  - name: "mail"
+  - name: "11"
     display_name: "󰇰"
     keep_alive: false
 
-  - name: "umail" # ucla mail
+  - name: "12" # ucla mail
     display_name: "󰻨"
     keep_alive: false
 
-  - name: "spotify"
+  - name: "13"
     display_name: ""
     keep_alive: false
 
-  - name: "ticktick"
+  - name: "14"
     display_name: "󰄴"
     keep_alive: false
 
@@ -184,26 +184,26 @@ window_rules:
             regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|OpenConsole|Taskmgr|Beeper",
           }
 
-  - commands: ["move --workspace ticktick"]
+  - commands: ["move --workspace 14"]
     match:
       - window_title: { regex: "^TickTick -*" }
         window_process: { regex: "brave" }
 
-  - commands: ["move --workspace mail"]
+  - commands: ["move --workspace 11"]
     match:
       - window_title:
           {
             regex: "(Gmail - Inbox( \\(\\d+\\))? - nicolasecrespo@gmail.com - Gmail)",
           }
 
-  - commands: ["move --workspace umail"]
+  - commands: ["move --workspace 12"]
     match:
       - window_title:
           {
             regex: "(Gmail - Inbox( \\(\\d+\\))? - ncrespo@g.ucla.edu - Google Apps for UCLA Mail)",
           }
 
-  - commands: ["move --workspace spotify"]
+  - commands: ["move --workspace 13"]
     match:
       - window_process: { equals: "Spotify" }
 
@@ -372,15 +372,15 @@ keybindings:
     bindings: ["alt+8"]
   - commands: ["focus --workspace 9"]
     bindings: ["alt+9"]
-  - commands: ["focus --workspace ticktick"]
+  - commands: ["focus --workspace 14"]
     bindings: ["alt+e"]
-  - commands: ["focus --workspace spotify"]
+  - commands: ["focus --workspace 13"]
     bindings: ["alt+s"]
-  - commands: ["focus --workspace 11"]
+  - commands: ["focus --workspace 10"]
     bindings: ["alt+m"]
-  - commands: ["focus --workspace mail"]
+  - commands: ["focus --workspace 11"]
     bindings: ["alt+,"]
-  - commands: ["focus --workspace umail"]
+  - commands: ["focus --workspace 12"]
     bindings: ["alt+."]
 
   # Move the focused window's parent workspace to a monitor in a given
@@ -415,13 +415,13 @@ keybindings:
     bindings: ["alt+shift+8"]
   - commands: ["move --workspace 9"]
     bindings: ["alt+shift+9"]
-  - commands: ["move --workspace ticktick"]
+  - commands: ["move --workspace 14"]
     bindings: ["alt+shift+e"]
-  - commands: ["move --workspace spotify"]
+  - commands: ["move --workspace 13"]
     bindings: ["alt+shift+s"]
   - commands: ["move --workspace 11"]
     bindings: ["alt+shift+m"]
-  - commands: ["move --workspace mail"]
+  - commands: ["move --workspace 11"]
     bindings: ["alt+shift+,"]
-  - commands: ["move --workspace umail"]
+  - commands: ["move --workspace 12"]
     bindings: ["alt+shift+."]
