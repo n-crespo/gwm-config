@@ -181,7 +181,7 @@ window_rules:
           }
       - window_process:
           {
-            regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|OpenConsole|Taskmgr|Beeper",
+            regex: "explorer|Notepad|sublime_text|neovide|Photos|Discord|Steam|BCUninstaller|ProtonVPNService|ProtonVPN|SnippingTool|localsend_app|OpenConsole|Taskmgr|Beeper|procexp",
           }
 
   - commands: ["move --workspace 14"]
@@ -207,7 +207,7 @@ window_rules:
     match:
       - window_process: { equals: "Spotify" }
 
-  - commands: ["move --workspace 11"]
+  - commands: ["move --workspace 10"]
     match:
       - window_process: { equals: "Beeper" }
 
